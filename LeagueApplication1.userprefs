@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{F70D7C1A-1043-4D18-9C69-D0E4FB3B23FD}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LeagueApplication1/Pages/TabbedPages.cs">
+    <Files>
+      <File FileName="LeagueApplication1/Pages/FavoritesMaster.cs" Line="80" Column="48" />
+      <File FileName="LeagueApplication1/Custom Renderes Etc/TwitchStreamCell.cs" Line="52" Column="28" />
+      <File FileName="LeagueApplication1/TwitchLib-master/TwitchLib/TwitchApi.cs" Line="1" Column="1" />
+      <File FileName="LeagueApplication1/Custom Renderes Etc/GroupHeader.cs" Line="27" Column="48" />
+      <File FileName="LeagueApplication1/Pages/MasterDetailPage.cs" Line="20" Column="48" />
+      <File FileName="LeagueApplication1/Pages/SearchPage.cs" Line="45" Column="33" />
+      <File FileName="LeagueApplication1/App.cs" Line="29" Column="57" />
+      <File FileName="LeagueApplication1/Pages/TabbedPages.cs" Line="24" Column="3" />
+      <File FileName="LeagueApplication1/Pages/ChampionPage.cs" Line="212" Column="49" />
+      <File FileName="LeagueApplication1/Pages/ChampListPage.cs" Line="29" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.LeagueApplication1.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.43cbfa888780c8b3b35a43350614ee58caca9003" />
+  <DisabledProjects>
+    <String>Droid/LeagueApplication1.Droid.csproj</String>
+  </DisabledProjects>
+</Properties>
