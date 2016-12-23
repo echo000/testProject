@@ -1,0 +1,205 @@
+﻿using System.Collections.ObjectModel;
+
+namespace LeagueApplication1
+{
+	public class Champs : ObservableCollection<GroupedChampions>
+	{
+		public Champs()
+		{
+			var A = new GroupedChampions { LongName = "A", ShortName = "A" };
+			var B = new GroupedChampions { LongName = "B", ShortName = "B" };
+			var C = new GroupedChampions { LongName = "C", ShortName = "C" };
+			var D = new GroupedChampions { LongName = "D", ShortName = "D" };
+			var E = new GroupedChampions { LongName = "E", ShortName = "E" };
+			var F = new GroupedChampions { LongName = "F", ShortName = "F" };
+			var G = new GroupedChampions { LongName = "G", ShortName = "G" };
+			var H = new GroupedChampions { LongName = "H", ShortName = "H" };
+			var I = new GroupedChampions { LongName = "I", ShortName = "I" };
+			var J = new GroupedChampions { LongName = "J", ShortName = "J" };
+			var K = new GroupedChampions { LongName = "K", ShortName = "K" };
+			var L = new GroupedChampions { LongName = "L", ShortName = "L" };
+			var M = new GroupedChampions { LongName = "M", ShortName = "M" };
+			var N = new GroupedChampions { LongName = "N", ShortName = "N" };
+			var O = new GroupedChampions { LongName = "O", ShortName = "O" };
+			var P = new GroupedChampions { LongName = "P", ShortName = "P" };
+			var Q = new GroupedChampions { LongName = "Q", ShortName = "Q" };
+			var R = new GroupedChampions { LongName = "R", ShortName = "R" };
+			var S = new GroupedChampions { LongName = "S", ShortName = "S" };
+			var T = new GroupedChampions { LongName = "T", ShortName = "T" };
+			var U = new GroupedChampions { LongName = "U", ShortName = "U" };
+			var V = new GroupedChampions { LongName = "V", ShortName = "V" };
+			var W = new GroupedChampions { LongName = "W", ShortName = "W" };
+			var X = new GroupedChampions { LongName = "X", ShortName = "X" };
+			var Y = new GroupedChampions { LongName = "Y", ShortName = "Y" };
+			var Z = new GroupedChampions { LongName = "Z", ShortName = "Z" };
+
+			A.Add(new Champ("Aatrox", "The Darkin Blade", 266) { Icon = "Aatrox.png" });
+			A.Add(new Champ("Ahri", "The Nine-Tailed Fox", 103) { Icon = "Ahri.png" });
+			A.Add(new Champ("Akali", "The Fist of Shadow", 84) { Icon = "Akali.png" });
+			A.Add(new Champ("Alistar", "The Minotaur", 12) { Icon = "Alistar.png" });
+			A.Add(new Champ("Amumu", "The Sad Mummy", 32) { Icon = "Amumu.png" });
+			A.Add(new Champ("Anivia", "The Cryophoenix", 34) { Icon = "Anivia.png" });
+			A.Add(new Champ("Annie", "The Dark Child", 1) { Icon = "Annie.png" });
+			A.Add(new Champ("Ashe", "The Frost Archer", 22) { Icon = "Ashe.png" });
+			A.Add(new Champ("Aurelion Sol", "The Star Forger", 136) { Icon = "AurelionSol.png" });
+			A.Add(new Champ("Azir", "The Emperor of the Sands", 268) { Icon = "Azir.png" });
+			B.Add(new Champ("Bard", "The Wandering Caretaker", 432) { Icon = "Bard.png" });
+			B.Add(new Champ("Blitzcrank", "The Great Steam Golem", 53) { Icon = "Blitzcrank.png" });
+			B.Add(new Champ("Brand", "The Burning Vengance", 63) { Icon = "Brand.png" });
+			B.Add(new Champ("Braum", "The Heart of the Freljord", 201) { Icon = "Braum.png" });
+			C.Add(new Champ("Caitlyn", "The Sheriff of Piltover", 51) { Icon = "Caitlyn.png" });
+			C.Add(new Champ("Cassiopeia", "The Serpent's Embrace", 69) { Icon = "Cassiopeia.png" });
+			C.Add(new Champ("Cho'Gath", "The Terror of the Void", 31) { Icon = "Chogath.png" });
+			C.Add(new Champ("Corki", "The Daring Bombardier", 42) { Icon = "Corki.png" });
+			D.Add(new Champ("Darius", "The Hand Of Noxus", 122) { Icon = "Darius.png" });
+			D.Add(new Champ("Diana", "Scorn of the Moon", 131) { Icon = "Diana.png" });
+			D.Add(new Champ("Dr. Mundo", "The Madman of Zaun", 36) { Icon = "DrMundo.png" });
+			D.Add(new Champ("Draven", "The Glorious Executioner", 119) { Icon = "Draven.png" });
+			E.Add(new Champ("Ekko", "The Boy Who Shattered Time", 245) { Icon = "Ekko.png" });
+			E.Add(new Champ("Elise", "The Spider Queen", 60) { Icon = "Elise.png" });
+			E.Add(new Champ("Evelynn", "The Widowmaker", 28) { Icon = "Evelynn.png" });
+			E.Add(new Champ("Ezreal", "The Prodigal Explorer", 81) { Icon = "Ezreal.png" });
+			F.Add(new Champ("Fiddlesticks", "The Harbinger of Doom", 9) { Icon = "FiddleSticks.png" });
+			F.Add(new Champ("Fiora", "The Grand Duelist", 114) { Icon = "Fiora.png" });
+			F.Add(new Champ("Fizz", "The Tidal Trickster", 105) { Icon = "Fizz.png" });
+			G.Add(new Champ("Galio", "The Sentinel's Sorrow", 3) { Icon = "Galio.png" });
+			G.Add(new Champ("Gangplank", "The Saltwater Scourge", 41) { Icon = "Gangplank.png" });
+			G.Add(new Champ("Garen", "The Might of Demacia", 86) { Icon = "Garen.png" });
+			G.Add(new Champ("Gnar", "The Missing Link", 150) { Icon = "Gnar.png" });
+			G.Add(new Champ("Gragas", "The Rabble Rouser", 79) { Icon = "Gragas.png" });
+			G.Add(new Champ("Graves", "The Outlaw", 104) { Icon = "Graves.png" });
+			H.Add(new Champ("Hecarim", "The Shadow of War", 120) { Icon = "Hecarim.png" });
+			H.Add(new Champ("Heimerdinger", "The Revered Inventor", 74) { Icon = "Heimerdinger.png" });
+			I.Add(new Champ("Illaoi", "The Kraken Priestess", 420) { Icon = "Illaoi.png" });
+			I.Add(new Champ("Irelia", "The Will of the Blades", 39) { Icon = "Irelia.png" });
+			I.Add(new Champ("Ivern", "The Greenfather", 427) { Icon = "Ivern.png" });
+			J.Add(new Champ("Janna", "The Storm's Fury", 40) { Icon = "Janna.png" });
+			J.Add(new Champ("Jarvan IV", "The Exemplar of Demacia", 59) { Icon = "JarvanIV.png" });
+			J.Add(new Champ("Jax", "The Grandmaster At Arms", 24) { Icon = "Jax.png" });
+			J.Add(new Champ("Jayce", "The Defencer of Tomorrow", 126) { Icon = "Jayce.png" });
+			J.Add(new Champ("Jhin", "The Virtuoso", 202) { Icon = "Jhin.png" });
+			J.Add(new Champ("Jinx", "The Loose Cannon", 222) { Icon = "Jinx.png" });
+			K.Add(new Champ("Kalista", "The Spear of Vengeance", 429) { Icon = "Kalista.png" });
+			K.Add(new Champ("Karma", "The Enlightened One", 43) { Icon = "Karma.png" });
+			K.Add(new Champ("Karthus", "The Deathsinger", 30) { Icon = "Karthus.png" });
+			K.Add(new Champ("Kassadin", "The Void Walker", 38) { Icon = "Kassadin.png" });
+			K.Add(new Champ("Katarina", "The Sinister Blade", 55) { Icon = "Katarina.png" });
+			K.Add(new Champ("Kayle", "The Judicator", 10) { Icon = "Kayle.png" });
+			K.Add(new Champ("Kennen", "The Heart of the Tempest", 85) { Icon = "Kennen.png" });
+			K.Add(new Champ("Kha'Zix", "The Voidreaver", 121) { Icon = "Khazix.png" });
+			K.Add(new Champ("Kindred", "The Eternal Hunters", 203) { Icon = "Kindred.png" });
+			K.Add(new Champ("Kled", "The Cantankerous Cavalier", 240) { Icon = "Kled.png" });
+			K.Add(new Champ("Kog'Maw", "The Mouth of the Abyss", 96) { Icon = "KogMaw.png" });
+			L.Add(new Champ("LeBlanc", "The Deceiver", 7) { Icon = "Leblanc.png" });
+			L.Add(new Champ("Lee Sin", "The Blind Monk", 64) { Icon = "LeeSin.png" });
+			L.Add(new Champ("Leona", "The Radiant Dawn", 89) { Icon = "Leona.png" });
+			L.Add(new Champ("Lissandra", "The Ice Witch", 127) { Icon = "Lissandra.png" });
+			L.Add(new Champ("Lucian", "The Purifier", 236) { Icon = "Lucian.png" });
+			L.Add(new Champ("Lulu", "The Fae Sorceress", 117) { Icon = "Lulu.png" });
+			L.Add(new Champ("Lux", "The Lady of Luminosity", 99) { Icon = "Lux.png" });
+			M.Add(new Champ("Malphite", "Shard of the Monolith", 54) { Icon = "Malphite.png" });
+			M.Add(new Champ("Malzahar", "The Prophet of the Void", 90) { Icon = "Malzahar.png" });
+			M.Add(new Champ("Maokai", "The Twisted Treant", 57) { Icon = "Maokai.png" });
+			M.Add(new Champ("Master Yi", "The Wuji Bladesman", 11) { Icon = "MasterYi.png" });
+			M.Add(new Champ("Miss Fortune", "The Bounty Hunter", 21) { Icon = "MissFortune.png" });
+			M.Add(new Champ("Mordekaiser", "The Iron Revenant", 82) { Icon = "Mordekaiser.png" });
+			M.Add(new Champ("Morgana", "Fallen Angel", 25) { Icon = "Morgana.png" });
+			N.Add(new Champ("Nami", "The Tidecaller", 267) { Icon = "Nami.png" });
+			N.Add(new Champ("Nasus", "The Curator of the Sands", 75) { Icon = "Nasus.png" });
+			N.Add(new Champ("Nautilus", "The Titan of the Depths", 111) { Icon = "Nautilus.png" });
+			N.Add(new Champ("Nidalee", "The Bestial Huntress", 76) { Icon = "Nidalee.png" });
+			N.Add(new Champ("Nocturne", "The Eternal Nightmare", 56) { Icon = "Nocturne.png" });
+			N.Add(new Champ("Nunu", "The Yeti Rider", 20) { Icon = "Nunu.png" });
+			O.Add(new Champ("Olaf", "The Berserker", 2) { Icon = "Olaf.png" });
+			O.Add(new Champ("Orianna", "The Lady of Clockwork", 61) { Icon = "Orianna.png" });
+			P.Add(new Champ("Pantheon", "The Artisan of War", 80) { Icon = "Pantheon.png" });
+			P.Add(new Champ("Poppy", "Keeper of the Hammer", 78) { Icon = "Poppy.png" });
+			Q.Add(new Champ("Quinn", "Demacia's Wings", 133) { Icon = "Quinn.png" });
+			R.Add(new Champ("Rammus", "The Armordillo", 33) { Icon = "Rammus.png" });
+			R.Add(new Champ("Rek'Sai", "The Void Burrower", 421) { Icon = "RekSai.png" });
+			R.Add(new Champ("Renekton", "The Butcher of the Sands", 58) { Icon = "Renekton.png" });
+			R.Add(new Champ("Rengar", "The Pridestalker", 107) { Icon = "Rengar.png" });
+			R.Add(new Champ("Riven", "The Exile", 92) { Icon = "Riven.png" });
+			R.Add(new Champ("Rumble", "The Mechanized Menace", 68) { Icon = "Rumble.png" });
+			R.Add(new Champ("Ryze", "The Rogue Mage", 13) { Icon = "Ryze.png" });
+			S.Add(new Champ("Sejuani", "The Winter's Wrath", 113) { Icon = "Sejuani.png" });
+			S.Add(new Champ("Shaco", "The Demon Jester", 35) { Icon = "Shaco.png" });
+			S.Add(new Champ("Shen", "The Eye of Twilight", 98) { Icon = "Shen.png" });
+			S.Add(new Champ("Shyvana", "The Half-Dragon", 102) { Icon = "Shyvana.png" });
+			S.Add(new Champ("Singed", "The Mad Chemist", 27) { Icon = "Singed.png" });
+			S.Add(new Champ("Sion", "The Undead Juggernaut", 14) { Icon = "Sion.png" });
+			S.Add(new Champ("Sivir", "The Battle Mistress", 15) { Icon = "Sivir.png" });
+			S.Add(new Champ("Skarner", "The Crystal Vanguard", 72) { Icon = "Skarner.png" });
+			S.Add(new Champ("Sona", "Maven of the Strings", 37) { Icon = "Sona.png" });
+			S.Add(new Champ("Soraka", "The Starchild", 16) { Icon = "Soraka.png" });
+			S.Add(new Champ("Swain", "The Master Tactician", 50) { Icon = "Swain.png" });
+			S.Add(new Champ("Syndra", "The Dark Sovereign", 134) { Icon = "Syndra.png" });
+			T.Add(new Champ("Tahm Kench", "The River King", 223) { Icon = "TahmKench.png" });
+			T.Add(new Champ("Taliyah", "The Stoneweaver", 163) { Icon = "Taliyah.png" });
+			T.Add(new Champ("Talon", "The Blade's Shadow", 91) { Icon = "Talon.png" });
+			T.Add(new Champ("Taric", "The Shield of Valoran", 44) { Icon = "Taric.png" });
+			T.Add(new Champ("Teemo", "The Swift Scout", 17) { Icon = "Teemo.png" });
+			T.Add(new Champ("Thresh", "The Chain Warden", 412) { Icon = "Thresh.png" });
+			T.Add(new Champ("Tristana", "The Yordle Gunner", 18) { Icon = "Tristana.png" });
+			T.Add(new Champ("Trundle", "The Troll King", 48) { Icon = "Trundle.png" });
+			T.Add(new Champ("Tryndamere", "The Barbarian King", 23) { Icon = "Tryndamere.png" });
+			T.Add(new Champ("Twisted Fate", "The Card Master", 4) { Icon = "TwistedFate.png" });
+			T.Add(new Champ("Twitch", "The Plague Rat", 29) { Icon = "Twitch.png" });
+			U.Add(new Champ("Udyr", "The Spirit Walker", 77) { Icon = "Udyr.png" });
+			U.Add(new Champ("Urgot", "The Headsman's Pride", 6) { Icon = "Urgot.png" });
+			V.Add(new Champ("Varus", "The Arrow of Retribution", 110) { Icon = "Varus.png" });
+			V.Add(new Champ("Vayne", "The Night Hunter", 67) { Icon = "Vayne.png" });
+			V.Add(new Champ("Veigar", "The Tiny Master of Evil", 45) { Icon = "Veigar.png" });
+			V.Add(new Champ("Vel'Koz", "The Eye of the Void", 161) { Icon = "Velkoz.png" });
+			V.Add(new Champ("Vi", "The Piltover Enforcer", 254) { Icon = "Vi.png" });
+			V.Add(new Champ("Viktor", "The Machine Herald", 112) { Icon = "Viktor.png" });
+			V.Add(new Champ("Vladimir", "The Crimson Reaper", 8) { Icon = "Vladimir.png" });
+			V.Add(new Champ("Volibear", "The Thunder's Roar", 106) { Icon = "Volibear.png" });
+			W.Add(new Champ("Warwick", "The Blood Hunter", 19) { Icon = "Warwick.png" });
+			W.Add(new Champ("Wukong", "The Monkey King", 62) { Icon = "MonkeyKing.png" });
+			X.Add(new Champ("Xerath", "The Magus Ascendant", 101) { Icon = "Xerath.png" });
+			X.Add(new Champ("Xin Zhao", "The Seneschal of Demacia", 5) { Icon = "XinZhao.png" });
+			Y.Add(new Champ("Yasuo", "The Unforgiven", 157) { Icon = "Yasuo.png" });
+			Y.Add(new Champ("Yorick", "The Shepherd of Lost Souls", 83) { Icon = "Yorick.png" });
+			Z.Add(new Champ("Zac", "The Secret Weapon", 154) { Icon = "Zac.png" });
+			Z.Add(new Champ("Zed", "The Master of Shadows", 238) { Icon = "Zed.png" });
+			Z.Add(new Champ("Ziggs", "The Explosives Expert", 115) { Icon = "Ziggs.png" });
+			Z.Add(new Champ("Zilean", "The Chronokeeper", 26) { Icon = "Zilean.png" });
+			Z.Add(new Champ("Zyra", "Rise of the Thorns", 143) { Icon = "Zyra.png" });
+
+
+			Add(A);
+			Add(B);
+			Add(C);
+			Add(D);
+			Add(E);
+			Add(F);
+			Add(G);
+			Add(H);
+			Add(I);
+			Add(J);
+			Add(K);
+			Add(L);
+			Add(M);
+			Add(N);
+			Add(O);
+			Add(P);
+			Add(Q);
+			Add(R);
+			Add(S);
+			Add(T);
+			Add(U);
+			Add(V);
+			Add(W);
+			Add(X);
+			Add(Y);
+			Add(Z);
+		}
+	}
+	public class GroupedChampions : ObservableCollection<Champ>
+	{
+		public string LongName { get; set; }
+		public string ShortName { get; set; }
+	}
+}
+

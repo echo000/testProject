@@ -1,0 +1,464 @@
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F4012ED8-0A51-4720-9EF1-83835E4F56BE}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LeagueApplication1</RootNamespace>
+    <AssemblyName>LeagueApplication1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="RiotSharp\Cache.cs" />
+    <Compile Include="RiotSharp\ICache.cs" />
+    <Compile Include="RiotSharp\IRiotApi.cs" />
+    <Compile Include="RiotSharp\IStaticRiotApi.cs" />
+    <Compile Include="RiotSharp\IStatusRiotApi.cs" />
+    <Compile Include="RiotSharp\ITournamentRiotApi.cs" />
+    <Compile Include="RiotSharp\RateLimitedRequester.cs" />
+    <Compile Include="RiotSharp\Requester.cs" />
+    <Compile Include="RiotSharp\Requesters.cs" />
+    <Compile Include="RiotSharp\RiotApi.cs" />
+    <Compile Include="RiotSharp\RiotSharpException.cs" />
+    <Compile Include="RiotSharp\StaticRiotApi.cs" />
+    <Compile Include="RiotSharp\StatusRiotApi.cs" />
+    <Compile Include="RiotSharp\TournamentRiotApi.cs" />
+    <Compile Include="RiotSharp\ChampionEndpoint\Champion.cs" />
+    <Compile Include="RiotSharp\ChampionEndpoint\ChampionList.cs" />
+    <Compile Include="RiotSharp\ChampionMasteryEndpoint\ChampionMastery.cs" />
+    <Compile Include="RiotSharp\CurrentGameEndpoint\BannedChampion.cs" />
+    <Compile Include="RiotSharp\CurrentGameEndpoint\CurrentGame.cs" />
+    <Compile Include="RiotSharp\CurrentGameEndpoint\Mastery.cs" />
+    <Compile Include="RiotSharp\CurrentGameEndpoint\Observer.cs" />
+    <Compile Include="RiotSharp\CurrentGameEndpoint\Participant.cs" />
+    <Compile Include="RiotSharp\CurrentGameEndpoint\Rune.cs" />
+    <Compile Include="RiotSharp\CurrentGameEndpoint\Enums\GameQueueType.cs" />
+    <Compile Include="RiotSharp\CurrentGameEndpoint\Enums\Converters\GameQueueTypeConverter.cs" />
+    <Compile Include="RiotSharp\FeaturedGamesEndpoint\FeaturedGames.cs" />
+    <Compile Include="RiotSharp\GameEndpoint\Game.cs" />
+    <Compile Include="RiotSharp\GameEndpoint\Player.cs" />
+    <Compile Include="RiotSharp\GameEndpoint\RawStat.cs" />
+    <Compile Include="RiotSharp\GameEndpoint\RecentGames.cs" />
+    <Compile Include="RiotSharp\GameEndpoint\Enums\GameSubType.cs" />
+    <Compile Include="RiotSharp\GameEndpoint\Enums\Converters\GameSubTypeConverter.cs" />
+    <Compile Include="RiotSharp\LeagueEndpoint\League.cs" />
+    <Compile Include="RiotSharp\LeagueEndpoint\LeagueEntry.cs" />
+    <Compile Include="RiotSharp\LeagueEndpoint\MiniSeries.cs" />
+    <Compile Include="RiotSharp\LeagueEndpoint\Enums\Tier.cs" />
+    <Compile Include="RiotSharp\LeagueEndpoint\Enums\Converters\CharArrayConverter.cs" />
+    <Compile Include="RiotSharp\LeagueEndpoint\Enums\Converters\TierConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\BannedChampion.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Event.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Frame.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Mastery.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\MatchDetail.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\MatchList.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\MatchReference.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\MatchSummary.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Participant.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\ParticipantFrame.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\ParticipantIdentity.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\ParticipantStats.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\ParticipantTimeline.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\ParticipantTimelineData.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Player.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Position.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Rune.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Team.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Timeline.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\AscendedType.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\BuildingType.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\CapturedPoint.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\EventType.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Lane.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\LaneType.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\LevelUpType.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\MonsterType.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\QueueType.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Role.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Season.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\TowerType.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\WardType.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\AscendedTypeConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\BuildingTypeConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\CapturedPointConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\EventTypeConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\LaneConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\LaneTypeConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\LevelUpTypeConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\MonsterTypeConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\QueueTypeConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\RoleConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\SeasonConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\TowerTypeConverter.cs" />
+    <Compile Include="RiotSharp\MatchEndpoint\Enums\Converters\WardTypeConverter.cs" />
+    <Compile Include="RiotSharp\Misc\DateTimeConverterFromLong.cs" />
+    <Compile Include="RiotSharp\Misc\DateTimeConverterFromString.cs" />
+    <Compile Include="RiotSharp\Misc\DateTimeConverterFromStringTimestamp.cs" />
+    <Compile Include="RiotSharp\Misc\GameMode.cs" />
+    <Compile Include="RiotSharp\Misc\GameModeConverter.cs" />
+    <Compile Include="RiotSharp\Misc\GameType.cs" />
+    <Compile Include="RiotSharp\Misc\GameTypeConverter.cs" />
+    <Compile Include="RiotSharp\Misc\Language.cs" />
+    <Compile Include="RiotSharp\Misc\MapType.cs" />
+    <Compile Include="RiotSharp\Misc\MapTypeConverter.cs" />
+    <Compile Include="RiotSharp\Misc\Platform.cs" />
+    <Compile Include="RiotSharp\Misc\PlatformConverter.cs" />
+    <Compile Include="RiotSharp\Misc\Queue.cs" />
+    <Compile Include="RiotSharp\Misc\QueueConverter.cs" />
+    <Compile Include="RiotSharp\Misc\Region.cs" />
+    <Compile Include="RiotSharp\Misc\RegionConverter.cs" />
+    <Compile Include="RiotSharp\Misc\Slug.cs" />
+    <Compile Include="RiotSharp\Misc\TimeSpanConverterFromMS.cs" />
+    <Compile Include="RiotSharp\Misc\TimeSpanConverterFromS.cs" />
+    <Compile Include="RiotSharp\Misc\Util.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\BasicDataStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\DataRequested.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\ImageStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\MetadataStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\SpellVarStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\StatsStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\BlockItemStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\BlockStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\ChampionListStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\ChampionSpellStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\ChampionStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\ChampionStatsStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\InfoStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\LevelTipStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\PassiveStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\RecommendedStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\SkinStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\Cache\ChampionListStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\Cache\ChampionStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\Enums\ParTypeStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\Enums\TagStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\Enums\Converters\ParTypeStaticConverter.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Champion\Enums\Converters\TagStaticListConverter.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Item\GoldStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Item\GroupStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Item\ItemListStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Item\ItemStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Item\ItemTreeStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Item\Cache\ItemListStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Item\Cache\ItemStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\LanguageStrings\LanguageStringsStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\LanguageStrings\Cache\LanguageStringsStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Map\MapStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Map\MapsStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Map\Cache\MapsStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Mastery\MasteryListStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Mastery\MasteryStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Mastery\MasteryTreeItemStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Mastery\MasteryTreeListStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Mastery\MasteryTreeStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Mastery\Cache\MasteryListStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Mastery\Cache\MasteryStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Realm\RealmStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Realm\Cache\RealmStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Rune\RuneListStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Rune\RuneStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Rune\Cache\RuneListStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\Rune\Cache\RuneStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\SummonerSpell\SummonerSpell.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\SummonerSpell\SummonerSpellListStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\SummonerSpell\SummonerSpellStatic.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\SummonerSpell\Cache\SummonerSpellListStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StaticDataEndpoint\SummonerSpell\Cache\SummonerSpellStaticWrapper.cs" />
+    <Compile Include="RiotSharp\StatsEndpoint\AggregatedStat.cs" />
+    <Compile Include="RiotSharp\StatsEndpoint\ChampionStat.cs" />
+    <Compile Include="RiotSharp\StatsEndpoint\ChampionStats.cs" />
+    <Compile Include="RiotSharp\StatsEndpoint\PlayerStatsSummary.cs" />
+    <Compile Include="RiotSharp\StatsEndpoint\PlayerStatsSummaryList.cs" />
+    <Compile Include="RiotSharp\StatsEndpoint\RankedStats.cs" />
+    <Compile Include="RiotSharp\StatsEndpoint\Season.cs" />
+    <Compile Include="RiotSharp\StatsEndpoint\Enums\PlayerStatsSummaryType.cs" />
+    <Compile Include="RiotSharp\StatsEndpoint\Enums\Converters\PlayerStatsSummaryTypeConverter.cs" />
+    <Compile Include="RiotSharp\StatusEndpoint\Incident.cs" />
+    <Compile Include="RiotSharp\StatusEndpoint\Message.cs" />
+    <Compile Include="RiotSharp\StatusEndpoint\Service.cs" />
+    <Compile Include="RiotSharp\StatusEndpoint\Shard.cs" />
+    <Compile Include="RiotSharp\StatusEndpoint\ShardStatus.cs" />
+    <Compile Include="RiotSharp\StatusEndpoint\Translation.cs" />
+    <Compile Include="RiotSharp\SummonerEndpoint\Mastery.cs" />
+    <Compile Include="RiotSharp\SummonerEndpoint\MasteryPage.cs" />
+    <Compile Include="RiotSharp\SummonerEndpoint\MasteryPages.cs" />
+    <Compile Include="RiotSharp\SummonerEndpoint\RunePage.cs" />
+    <Compile Include="RiotSharp\SummonerEndpoint\RunePages.cs" />
+    <Compile Include="RiotSharp\SummonerEndpoint\RuneSlot.cs" />
+    <Compile Include="RiotSharp\SummonerEndpoint\Summoner.cs" />
+    <Compile Include="RiotSharp\SummonerEndpoint\SummonerBase.cs" />
+    <Compile Include="RiotSharp\SummonerEndpoint\SummonerBaseList.cs" />
+    <Compile Include="RiotSharp\TeamEndpoint\MatchHistorySummary.cs" />
+    <Compile Include="RiotSharp\TeamEndpoint\MessageOfDay.cs" />
+    <Compile Include="RiotSharp\TeamEndpoint\Roster.cs" />
+    <Compile Include="RiotSharp\TeamEndpoint\Team.cs" />
+    <Compile Include="RiotSharp\TeamEndpoint\TeamMemberInfo.cs" />
+    <Compile Include="RiotSharp\TeamEndpoint\TeamStatDetail.cs" />
+    <Compile Include="RiotSharp\TournamentEndpoint\Tournament.cs" />
+    <Compile Include="RiotSharp\TournamentEndpoint\TournamentCodeDetail.cs" />
+    <Compile Include="RiotSharp\TournamentEndpoint\TournamentLobbyEvent.cs" />
+    <Compile Include="RiotSharp\TournamentEndpoint\TournamentProvider.cs" />
+    <Compile Include="RiotSharp\TournamentEndpoint\Enums\TournamentEventType.cs" />
+    <Compile Include="RiotSharp\TournamentEndpoint\Enums\TournamentMapType.cs" />
+    <Compile Include="RiotSharp\TournamentEndpoint\Enums\TournamentPickType.cs" />
+    <Compile Include="RiotSharp\TournamentEndpoint\Enums\TournamentSpectatorType.cs" />
+    <Compile Include="RiotSharp\TournamentEndpoint\Enums\Converters\TournamentMapTypeConverter.cs" />
+    <Compile Include="RiotSharp\TournamentEndpoint\Enums\Converters\TournamentPickTypeConverter.cs" />
+    <Compile Include="RiotSharp\TournamentEndpoint\Enums\Converters\TournamentSpectatorTypeConverter.cs" />
+    <Compile Include="Pages\ChampionPage.cs" />
+    <Compile Include="Pages\ChampListPage.cs" />
+    <Compile Include="Pages\DownloadImages.cs" />
+    <Compile Include="Pages\PreviousGamePage.cs" />
+    <Compile Include="Pages\SearchPage.cs" />
+    <Compile Include="Pages\TabbedPages.cs" />
+    <Compile Include="Custom Renderes Etc\PreviousGameCell.cs" />
+    <Compile Include="Custom Renderes Etc\ExpandedGameCell.cs" />
+    <Compile Include="Utils\FavoriteDatabase.cs" />
+    <Compile Include="Utils\RecentDatabase.cs" />
+    <Compile Include="Custom Renderes Etc\CustomSearchBar.cs" />
+    <Compile Include="Utils\IndexChangedEventArgs.cs" />
+    <Compile Include="Utils\ChampionListView.cs" />
+    <Compile Include="Utils\Champ.cs" />
+    <Compile Include="Utils\Champs.cs" />
+    <Compile Include="Utils\CurrentGamePlayers.cs" />
+    <Compile Include="Utils\SearchesAndFavorites.cs" />
+    <Compile Include="Utils\Previous.cs" />
+    <Compile Include="Utils\PreviousExpanded.cs" />
+    <Compile Include="Utils\ISQLite.cs" />
+    <Compile Include="Utils\HtmlLabel.cs" />
+    <Compile Include="Custom Renderes Etc\AbilityCell.cs" />
+    <Compile Include="Utils\AdMobView.cs" />
+    <Compile Include="Utils\PreserveAttribute.cs" />
+    <Compile Include="Pages\FavoritesMaster.cs" />
+    <Compile Include="Pages\MasterDetailPage.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Controllers\TwitchController.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Channel.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Chat.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\ChatBadges.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\ChatEmoticons.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\ChatServers.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\GamesTop.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\IngestServer.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\StreamLive.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\StreamsTop.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Twitch.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\User.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\UserVideos.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Authed\OAuthToken.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Authed\UserData.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Authed\UserSubscription.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\PubSub\Actions\ModAction.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\PubSub\Actions\MessageModels\ModMessageModel.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\PubSub\Actions\Static\Message.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Static\FPS.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Static\Ingest.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Static\Links.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Static\Preview.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Static\Resolutions.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Static\Stream.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Models\Static\Authed\Notifications.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Util\Configuration.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\TwitchApi.cs" />
+    <Compile Include="TwitchLib-master\TwitchLib\Controllers\TwitchRequesters.cs" />
+    <Compile Include="Custom Renderes Etc\GroupHeader.cs" />
+    <Compile Include="Custom Renderes Etc\TwitchStreamCell.cs" />
+    <Compile Include="Pages\MyPage.xaml.cs">
+      <DependentUpon>xamlSummonerTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Renderes Etc\FilterControl.cs" />
+    <Compile Include="CarouselLayout.cs" />
+    <Compile Include="Pages\SliderView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.3\lib\portable-windows8+net45+wp8\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Theme.Base">
+      <HintPath>..\packages\Xamarin.Forms.Theme.Base.1.0.0.43-pre1\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Theme.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Theme.Dark">
+      <HintPath>..\packages\Xamarin.Forms.Theme.Dark.1.0.0.43-pre1\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Theme.Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Theme.Light">
+      <HintPath>..\packages\Xamarin.Forms.Theme.Light.1.0.0.43-pre1\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Theme.Light.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\packages\Splat.1.6.2\lib\Portable-net45+win+wpa81+wp80\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarinos.AdMob.Forms.Abstractions">
+      <HintPath>..\packages\Xamarinos.AdMob.FormsPlugin.1.0.4\lib\portable-net45+wp8+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10\Xamarinos.AdMob.Forms.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net45+win8+wpa81\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net45+win8+wpa81\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Zlib.Portable">
+      <HintPath>..\packages\Zlib.Portable.Signed.1.11.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoTouch+MonoAndroid\Zlib.Portable.dll</HintPath>
+    </Reference>
+    <Reference Include="Xam.Plugins.VideoPlayer">
+      <HintPath>..\packages\Xam.Plugins.VideoPlayer.1.0.0-pre07\lib\portable-net45+win8+wpa81+wp8+monoandroid+xamarinios+monotouch+xamarinmac\Xam.Plugins.VideoPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net">
+      <HintPath>..\packages\sqlite-net-pcl.1.2.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.3.0.37-beta\lib\portable-net45+wp80+win8+wpa81\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.3.0.37-beta\lib\portable-net45+wp80+win8+wpa81\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Octane.Xam.VideoPlayer">
+      <HintPath>..\packages\Octane.Xam.VideoPlayer.1.2.1.0\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Octane.Xam.VideoPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.0\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.0\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.0\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.163-pre3\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.163-pre3\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.163-pre3\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Pages">
+      <HintPath>..\packages\Xamarin.Forms.Pages.2.3.3.163-pre3\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10\Xamarin.Forms.Pages.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs">
+      <HintPath>..\packages\Acr.UserDialogs.6.2.5\lib\portable-win+net45+wp8+win8+wpa81\Acr.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs.Interface">
+      <HintPath>..\packages\Acr.UserDialogs.6.2.5\lib\portable-win+net45+wp8+win8+wpa81\Acr.UserDialogs.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCL.raw">
+      <HintPath>..\packages\SQLitePCL.raw.0.9.3\lib\portable-net45+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCL.raw.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCL.batteries">
+      <HintPath>..\packages\SQLitePCL.bundle_green.0.9.3\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCL.batteries.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="Forms9Patch">
+      <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Forms9Patch.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsGestures">
+      <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\FormsGestures.dll</HintPath>
+    </Reference>
+    <Reference Include="NumericalMethods">
+      <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\NumericalMethods.dll</HintPath>
+    </Reference>
+    <Reference Include="PCL.Utils">
+      <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\PCL.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.Portable.Core">
+      <HintPath>..\packages\FubarCoder.RestSharp.Portable.Core.3.3.0\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\RestSharp.Portable.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.Portable.HttpClient">
+      <HintPath>..\packages\FubarCoder.RestSharp.Portable.HttpClient.3.3.0\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\RestSharp.Portable.HttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\portable-net45+netcore45+wp8+MonoAndroid+MonoTouch\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.1.8.0.5\lib\portable-net45+wp80+win8+wpa81\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="ExifLib">
+      <HintPath>..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Core">
+      <HintPath>..\packages\XLabs.Core.2.3.0-pre02\lib\portable-net45+netcore45+wpa81+wp8+monoandroid+monotouch+xamarinios10+xamarinmac\XLabs.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.IOC">
+      <HintPath>..\packages\XLabs.IoC.2.3.0-pre02\lib\portable-net45+netcore45+wpa81+wp8+monoandroid+monotouch+xamarinios10+xamarinmac\XLabs.IOC.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Serialization">
+      <HintPath>..\packages\XLabs.Serialization.2.3.0-pre02\lib\portable-net45+netcore45+wpa81+wp8+monoandroid+monotouch+xamarinios10+xamarinmac\XLabs.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Platform">
+      <HintPath>..\packages\XLabs.Platform.2.3.0-pre02\lib\portable-net45+netcore45+wpa81+monoandroid+MonoTouch+Xamarin.iOS10\XLabs.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Forms">
+      <HintPath>..\packages\XLabs.Forms.2.3.0-pre02\lib\portable-net45+netcore45+wpa81+monoandroid+MonoTouch+Xamarin.iOS10\XLabs.Forms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Xam.Plugins.VideoPlayer.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RiotSharp\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Custom Renderes Etc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\xamlSummonerTest.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.2.118-pre1\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.118-pre1\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.3.163-pre3\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.163-pre3\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+</Project>
