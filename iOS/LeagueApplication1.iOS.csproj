@@ -1,0 +1,1422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Build.Download.0.2.2\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.2.2\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{F70D7C1A-1043-4D18-9C69-D0E4FB3B23FD}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>LeagueApplication1.iOS</RootNamespace>
+    <AssemblyName>LeagueApplication1.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer: Cameron Finn (3B474C7MEJ)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>afc7cb89-dbb4-4d9e-89ff-f0759215b330</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer: Cameron Finn (3B474C7MEJ)</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer: Cameron Finn (3B474C7MEJ)</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>false</MtouchFastDev>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>beba3a42-873f-4558-907a-c9a40331e213</CodesignProvision>
+    <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
+    <MtouchSdkVersion>10.0</MtouchSdkVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\LeagueApplication1\bin\Debug\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\LeagueApplication1\bin\Debug\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\LeagueApplication1\bin\Debug\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\LeagueApplication1\bin\Debug\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCL.raw">
+      <HintPath>..\packages\SQLitePCL.raw.0.9.3\lib\Xamarin.iOS10\SQLitePCL.raw.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCL.batteries">
+      <HintPath>..\packages\SQLitePCL.bundle_green.0.9.3\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCL.batteries.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ModernHttpClient">
+      <HintPath>..\packages\modernhttpclient.2.4.2\lib\Xamarin.iOS10\ModernHttpClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Theme.Base">
+      <HintPath>..\packages\Xamarin.Forms.Theme.Base.1.0.0.43-pre1\lib\Xamarin.iOS10\Xamarin.Forms.Theme.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Theme.iOS">
+      <HintPath>..\packages\Xamarin.Forms.Theme.Base.1.0.0.43-pre1\lib\Xamarin.iOS10\Xamarin.Forms.Theme.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Theme.Dark">
+      <HintPath>..\packages\Xamarin.Forms.Theme.Dark.1.0.0.43-pre1\lib\Xamarin.iOS10\Xamarin.Forms.Theme.Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Theme.Light">
+      <HintPath>..\packages\Xamarin.Forms.Theme.Light.1.0.0.43-pre1\lib\Xamarin.iOS10\Xamarin.Forms.Theme.Light.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\packages\Splat.1.6.2\lib\Xamarin.iOS10\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.Support.iOS">
+      <HintPath>..\packages\Acr.Support.2.1.0\lib\Xamarin.iOS10\Acr.Support.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xam.Plugins.VideoPlayer">
+      <HintPath>..\packages\Xam.Plugins.VideoPlayer.1.0.0-pre07\lib\xamarinios\Xam.Plugins.VideoPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Xam.Plugins.VideoPlayer.IOS">
+      <HintPath>..\packages\Xam.Plugins.VideoPlayer.1.0.0-pre07\lib\xamarinios\Xam.Plugins.VideoPlayer.IOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.InAppPurchase-Unified">
+      <HintPath>..\Components\xamarin.inapppurchase-2.8\lib\ios-unified\Xamarin.InAppPurchase-Unified.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net">
+      <HintPath>..\packages\sqlite-net-pcl.1.2.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.3.0.37-beta\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.3.0.37-beta\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Octane.Xam.VideoPlayer">
+      <HintPath>..\packages\Octane.Xam.VideoPlayer.1.2.1.0\lib\Xamarin.iOS10\Octane.Xam.VideoPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Octane.Xam.VideoPlayer.iOS">
+      <HintPath>..\packages\Octane.Xam.VideoPlayer.1.2.1.0\lib\Xamarin.iOS10\Octane.Xam.VideoPlayer.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.0\lib\Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.sqlite3">
+      <HintPath>..\packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.1.0\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.0\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.0\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.163-pre3\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.163-pre3\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.163-pre3\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.163-pre3\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Pages">
+      <HintPath>..\packages\Xamarin.Forms.Pages.2.3.3.163-pre3\lib\Xamarin.iOS10\Xamarin.Forms.Pages.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MobileAds">
+      <HintPath>..\packages\Xamarin.Google.iOS.MobileAds.7.11.0\lib\Xamarin.iOS10\Google.MobileAds.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs">
+      <HintPath>..\packages\Acr.UserDialogs.6.2.6\lib\Xamarin.iOS10\Acr.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs.Interface">
+      <HintPath>..\packages\Acr.UserDialogs.6.2.6\lib\Xamarin.iOS10\Acr.UserDialogs.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="Forms9Patch">
+      <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\Xamarin.iOS10\Forms9Patch.dll</HintPath>
+    </Reference>
+    <Reference Include="Forms9Patch.iOS">
+      <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\Xamarin.iOS10\Forms9Patch.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsGestures">
+      <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\Xamarin.iOS10\FormsGestures.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsGestures.iOS">
+      <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\Xamarin.iOS10\FormsGestures.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="NumericalMethods">
+      <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\Xamarin.iOS10\NumericalMethods.dll</HintPath>
+    </Reference>
+    <Reference Include="PCL.Utils">
+      <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\Xamarin.iOS10\PCL.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="PCL.Utils.iOS">
+      <HintPath>..\packages\Forms9Patch.0.9.13.5\lib\Xamarin.iOS10\PCL.Utils.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl">
+      <HintPath>..\packages\Twixel.2.0.4\lib\portable-net45+wp8+win8\Release\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Twixel">
+      <HintPath>..\packages\Twixel.2.0.4\lib\portable-net45+wp8+win8\Release\Twixel.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.1.8.0.5\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageCircle.Forms.Plugin.iOS">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.1.8.0.5\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="ExifLib">
+      <HintPath>..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Core">
+      <HintPath>..\packages\XLabs.Core.2.3.0-pre02\lib\portable-net45+netcore45+wpa81+wp8+monoandroid+monotouch+xamarinios10+xamarinmac\XLabs.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.IOC">
+      <HintPath>..\packages\XLabs.IoC.2.3.0-pre02\lib\portable-net45+netcore45+wpa81+wp8+monoandroid+monotouch+xamarinios10+xamarinmac\XLabs.IOC.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Serialization">
+      <HintPath>..\packages\XLabs.Serialization.2.3.0-pre02\lib\portable-net45+netcore45+wpa81+wp8+monoandroid+monotouch+xamarinios10+xamarinmac\XLabs.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Platform">
+      <HintPath>..\packages\XLabs.Platform.2.3.0-pre02\lib\Xamarin.iOS10\XLabs.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Platform.iOS">
+      <HintPath>..\packages\XLabs.Platform.2.3.0-pre02\lib\Xamarin.iOS10\XLabs.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Forms">
+      <HintPath>..\packages\XLabs.Forms.2.3.0-pre02\lib\Xamarin.iOS10\XLabs.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="XLabs.Forms.iOS">
+      <HintPath>..\packages\XLabs.Forms.2.3.0-pre02\lib\Xamarin.iOS10\XLabs.Forms.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LeagueApplication1\LeagueApplication1.csproj">
+      <Project>{F4012ED8-0A51-4720-9EF1-83835E4F56BE}</Project>
+      <Name>LeagueApplication1</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+    <None Include="Xam.Plugins.VideoPlayer.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="FilterControlRenderer.cs" />
+    <Compile Include="SQLite_iOS.cs" />
+    <Compile Include="CustomSearchBarRenderer.cs" />
+    <Compile Include="ViewCellRenderer.cs" />
+    <Compile Include="HtmlLabelRenderer.cs" />
+    <Compile Include="AdMobRenderer.cs" />
+    <Compile Include="SliderCarouselViewRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Atom.png" />
+    <BundleResource Include="Resources\SpookyGhost.png" />
+    <BundleResource Include="Resources\Wand.png" />
+    <BundleResource Include="Resources\Aatrox.png" />
+    <BundleResource Include="Resources\Ahri.png" />
+    <BundleResource Include="Resources\Akali.png" />
+    <BundleResource Include="Resources\Alistar.png" />
+    <BundleResource Include="Resources\Amumu.png" />
+    <BundleResource Include="Resources\Anivia.png" />
+    <BundleResource Include="Resources\Annie.png" />
+    <BundleResource Include="Resources\Ashe.png" />
+    <BundleResource Include="Resources\AurelionSol.png" />
+    <BundleResource Include="Resources\Azir.png" />
+    <BundleResource Include="Resources\Bard.png" />
+    <BundleResource Include="Resources\Blitzcrank.png" />
+    <BundleResource Include="Resources\Brand.png" />
+    <BundleResource Include="Resources\Braum.png" />
+    <BundleResource Include="Resources\Caitlyn.png" />
+    <BundleResource Include="Resources\Cassiopeia.png" />
+    <BundleResource Include="Resources\Chogath.png" />
+    <BundleResource Include="Resources\Corki.png" />
+    <BundleResource Include="Resources\Darius.png" />
+    <BundleResource Include="Resources\Diana.png" />
+    <BundleResource Include="Resources\Draven.png" />
+    <BundleResource Include="Resources\DrMundo.png" />
+    <BundleResource Include="Resources\Ekko.png" />
+    <BundleResource Include="Resources\Elise.png" />
+    <BundleResource Include="Resources\Evelynn.png" />
+    <BundleResource Include="Resources\Ezreal.png" />
+    <BundleResource Include="Resources\FiddleSticks.png" />
+    <BundleResource Include="Resources\Fiora.png" />
+    <BundleResource Include="Resources\Fizz.png" />
+    <BundleResource Include="Resources\Galio.png" />
+    <BundleResource Include="Resources\Gangplank.png" />
+    <BundleResource Include="Resources\Garen.png" />
+    <BundleResource Include="Resources\Gnar.png" />
+    <BundleResource Include="Resources\Gragas.png" />
+    <BundleResource Include="Resources\Graves.png" />
+    <BundleResource Include="Resources\Hecarim.png" />
+    <BundleResource Include="Resources\Heimerdinger.png" />
+    <BundleResource Include="Resources\Illaoi.png" />
+    <BundleResource Include="Resources\Irelia.png" />
+    <BundleResource Include="Resources\Janna.png" />
+    <BundleResource Include="Resources\JarvanIV.png" />
+    <BundleResource Include="Resources\Jax.png" />
+    <BundleResource Include="Resources\Jayce.png" />
+    <BundleResource Include="Resources\Jhin.png" />
+    <BundleResource Include="Resources\Jinx.png" />
+    <BundleResource Include="Resources\Kalista.png" />
+    <BundleResource Include="Resources\Karma.png" />
+    <BundleResource Include="Resources\Karthus.png" />
+    <BundleResource Include="Resources\Kassadin.png" />
+    <BundleResource Include="Resources\Katarina.png" />
+    <BundleResource Include="Resources\Kayle.png" />
+    <BundleResource Include="Resources\Kennen.png" />
+    <BundleResource Include="Resources\Khazix.png" />
+    <BundleResource Include="Resources\Kindred.png" />
+    <BundleResource Include="Resources\KogMaw.png" />
+    <BundleResource Include="Resources\Leblanc.png" />
+    <BundleResource Include="Resources\LeeSin.png" />
+    <BundleResource Include="Resources\Leona.png" />
+    <BundleResource Include="Resources\Lissandra.png" />
+    <BundleResource Include="Resources\Lucian.png" />
+    <BundleResource Include="Resources\Lulu.png" />
+    <BundleResource Include="Resources\Lux.png" />
+    <BundleResource Include="Resources\Malphite.png" />
+    <BundleResource Include="Resources\Malzahar.png" />
+    <BundleResource Include="Resources\Maokai.png" />
+    <BundleResource Include="Resources\MasterYi.png" />
+    <BundleResource Include="Resources\MissFortune.png" />
+    <BundleResource Include="Resources\MonkeyKing.png" />
+    <BundleResource Include="Resources\Mordekaiser.png" />
+    <BundleResource Include="Resources\Morgana.png" />
+    <BundleResource Include="Resources\Nami.png" />
+    <BundleResource Include="Resources\Nasus.png" />
+    <BundleResource Include="Resources\Nautilus.png" />
+    <BundleResource Include="Resources\Nidalee.png" />
+    <BundleResource Include="Resources\Nocturne.png" />
+    <BundleResource Include="Resources\Nunu.png" />
+    <BundleResource Include="Resources\Olaf.png" />
+    <BundleResource Include="Resources\Orianna.png" />
+    <BundleResource Include="Resources\Pantheon.png" />
+    <BundleResource Include="Resources\Poppy.png" />
+    <BundleResource Include="Resources\Quinn.png" />
+    <BundleResource Include="Resources\Rammus.png" />
+    <BundleResource Include="Resources\RekSai.png" />
+    <BundleResource Include="Resources\Renekton.png" />
+    <BundleResource Include="Resources\Rengar.png" />
+    <BundleResource Include="Resources\Riven.png" />
+    <BundleResource Include="Resources\Rumble.png" />
+    <BundleResource Include="Resources\Ryze.png" />
+    <BundleResource Include="Resources\Sejuani.png" />
+    <BundleResource Include="Resources\Shaco.png" />
+    <BundleResource Include="Resources\Shen.png" />
+    <BundleResource Include="Resources\Shyvana.png" />
+    <BundleResource Include="Resources\Singed.png" />
+    <BundleResource Include="Resources\Sion.png" />
+    <BundleResource Include="Resources\Sivir.png" />
+    <BundleResource Include="Resources\Skarner.png" />
+    <BundleResource Include="Resources\Sona.png" />
+    <BundleResource Include="Resources\Soraka.png" />
+    <BundleResource Include="Resources\Swain.png" />
+    <BundleResource Include="Resources\Syndra.png" />
+    <BundleResource Include="Resources\TahmKench.png" />
+    <BundleResource Include="Resources\Taliyah.png" />
+    <BundleResource Include="Resources\Talon.png" />
+    <BundleResource Include="Resources\Taric.png" />
+    <BundleResource Include="Resources\Teemo.png" />
+    <BundleResource Include="Resources\Thresh.png" />
+    <BundleResource Include="Resources\Tristana.png" />
+    <BundleResource Include="Resources\Trundle.png" />
+    <BundleResource Include="Resources\Tryndamere.png" />
+    <BundleResource Include="Resources\TwistedFate.png" />
+    <BundleResource Include="Resources\Twitch.png" />
+    <BundleResource Include="Resources\Udyr.png" />
+    <BundleResource Include="Resources\Urgot.png" />
+    <BundleResource Include="Resources\Varus.png" />
+    <BundleResource Include="Resources\Vayne.png" />
+    <BundleResource Include="Resources\Veigar.png" />
+    <BundleResource Include="Resources\Velkoz.png" />
+    <BundleResource Include="Resources\Vi.png" />
+    <BundleResource Include="Resources\Viktor.png" />
+    <BundleResource Include="Resources\Vladimir.png" />
+    <BundleResource Include="Resources\Volibear.png" />
+    <BundleResource Include="Resources\Warwick.png" />
+    <BundleResource Include="Resources\Xerath.png" />
+    <BundleResource Include="Resources\XinZhao.png" />
+    <BundleResource Include="Resources\Yasuo.png" />
+    <BundleResource Include="Resources\Yorick.png" />
+    <BundleResource Include="Resources\Zac.png" />
+    <BundleResource Include="Resources\Zed.png" />
+    <BundleResource Include="Resources\Ziggs.png" />
+    <BundleResource Include="Resources\Zilean.png" />
+    <BundleResource Include="Resources\Zyra.png" />
+    <BundleResource Include="Resources\Settings.png" />
+    <BundleResource Include="Resources\Contacts.png" />
+    <BundleResource Include="Resources\Human.png" />
+    <BundleResource Include="Resources\Human%402x.png" />
+    <BundleResource Include="Resources\Human%403x.png" />
+    <BundleResource Include="Resources\Search.png" />
+    <BundleResource Include="Resources\Search%402x.png" />
+    <BundleResource Include="Resources\Contact%402x.png" />
+    <BundleResource Include="Resources\Contact.png" />
+    <BundleResource Include="Resources\Cog.png" />
+    <BundleResource Include="Resources\Cog%402x.png" />
+    <BundleResource Include="Resources\Bronze.png" />
+    <BundleResource Include="Resources\Challenger.png" />
+    <BundleResource Include="Resources\Diamond.png" />
+    <BundleResource Include="Resources\Gold.png" />
+    <BundleResource Include="Resources\Master.png" />
+    <BundleResource Include="Resources\Platinum.png" />
+    <BundleResource Include="Resources\Silver.png" />
+    <BundleResource Include="Resources\Unranked.png" />
+    <BundleResource Include="Resources\Info%402x.png" />
+    <BundleResource Include="Resources\Info.png" />
+    <BundleResource Include="Resources\AppIcon29x29.png" />
+    <BundleResource Include="Resources\AppIcon29x29%402x.png" />
+    <BundleResource Include="Resources\AppIcon40x40.png" />
+    <BundleResource Include="Resources\AppIcon40x40%402x.png" />
+    <BundleResource Include="Resources\AppIcon50x50.png" />
+    <BundleResource Include="Resources\AppIcon50x50%402x.png" />
+    <BundleResource Include="Resources\AppIcon57x57.png" />
+    <BundleResource Include="Resources\AppIcon57x57%402x.png" />
+    <BundleResource Include="Resources\AppIcon60x60.png" />
+    <BundleResource Include="Resources\AppIcon60x60%402x.png" />
+    <BundleResource Include="Resources\AppIcon72x72.png" />
+    <BundleResource Include="Resources\AppIcon72x72%402x.png" />
+    <BundleResource Include="Resources\AppIcon76x76.png" />
+    <BundleResource Include="Resources\AppIcon76x76%402x.png" />
+    <BundleResource Include="Resources\ApplicationBar.Add.png" />
+    <BundleResource Include="Resources\Kled.png" />
+    <BundleResource Include="Resources\SummonerBarrier.png" />
+    <BundleResource Include="Resources\SummonerBoost.png" />
+    <BundleResource Include="Resources\SummonerClairvoyance.png" />
+    <BundleResource Include="Resources\SummonerDot.png" />
+    <BundleResource Include="Resources\SummonerExhaust.png" />
+    <BundleResource Include="Resources\SummonerFlash.png" />
+    <BundleResource Include="Resources\SummonerHaste.png" />
+    <BundleResource Include="Resources\SummonerHeal.png" />
+    <BundleResource Include="Resources\SummonerMana.png" />
+    <BundleResource Include="Resources\SummonerPoroRecall.png" />
+    <BundleResource Include="Resources\SummonerPoroThrow.png" />
+    <BundleResource Include="Resources\SummonerSmite.png" />
+    <BundleResource Include="Resources\SummonerSnowball.png" />
+    <BundleResource Include="Resources\SummonerTeleport.png" />
+    <BundleResource Include="Resources\1001.png" />
+    <BundleResource Include="Resources\1004.png" />
+    <BundleResource Include="Resources\1006.png" />
+    <BundleResource Include="Resources\1011.png" />
+    <BundleResource Include="Resources\1018.png" />
+    <BundleResource Include="Resources\1026.png" />
+    <BundleResource Include="Resources\1027.png" />
+    <BundleResource Include="Resources\1028.png" />
+    <BundleResource Include="Resources\1029.png" />
+    <BundleResource Include="Resources\1031.png" />
+    <BundleResource Include="Resources\1033.png" />
+    <BundleResource Include="Resources\1036.png" />
+    <BundleResource Include="Resources\1037.png" />
+    <BundleResource Include="Resources\1038.png" />
+    <BundleResource Include="Resources\1039.png" />
+    <BundleResource Include="Resources\1041.png" />
+    <BundleResource Include="Resources\1042.png" />
+    <BundleResource Include="Resources\1043.png" />
+    <BundleResource Include="Resources\1051.png" />
+    <BundleResource Include="Resources\1052.png" />
+    <BundleResource Include="Resources\1053.png" />
+    <BundleResource Include="Resources\1054.png" />
+    <BundleResource Include="Resources\1055.png" />
+    <BundleResource Include="Resources\1056.png" />
+    <BundleResource Include="Resources\1057.png" />
+    <BundleResource Include="Resources\1058.png" />
+    <BundleResource Include="Resources\1082.png" />
+    <BundleResource Include="Resources\1083.png" />
+    <BundleResource Include="Resources\1400.png" />
+    <BundleResource Include="Resources\1401.png" />
+    <BundleResource Include="Resources\1402.png" />
+    <BundleResource Include="Resources\1404.png" />
+    <BundleResource Include="Resources\1405.png" />
+    <BundleResource Include="Resources\1406.png" />
+    <BundleResource Include="Resources\1408.png" />
+    <BundleResource Include="Resources\1409.png" />
+    <BundleResource Include="Resources\1410.png" />
+    <BundleResource Include="Resources\1412.png" />
+    <BundleResource Include="Resources\1413.png" />
+    <BundleResource Include="Resources\1414.png" />
+    <BundleResource Include="Resources\1416.png" />
+    <BundleResource Include="Resources\1417.png" />
+    <BundleResource Include="Resources\1418.png" />
+    <BundleResource Include="Resources\1419.png" />
+    <BundleResource Include="Resources\2003.png" />
+    <BundleResource Include="Resources\2009.png" />
+    <BundleResource Include="Resources\2010.png" />
+    <BundleResource Include="Resources\2015.png" />
+    <BundleResource Include="Resources\2031.png" />
+    <BundleResource Include="Resources\2032.png" />
+    <BundleResource Include="Resources\2033.png" />
+    <BundleResource Include="Resources\2043.png" />
+    <BundleResource Include="Resources\2045.png" />
+    <BundleResource Include="Resources\2047.png" />
+    <BundleResource Include="Resources\2049.png" />
+    <BundleResource Include="Resources\2050.png" />
+    <BundleResource Include="Resources\2051.png" />
+    <BundleResource Include="Resources\2052.png" />
+    <BundleResource Include="Resources\2053.png" />
+    <BundleResource Include="Resources\2054.png" />
+    <BundleResource Include="Resources\2138.png" />
+    <BundleResource Include="Resources\2139.png" />
+    <BundleResource Include="Resources\2140.png" />
+    <BundleResource Include="Resources\2301.png" />
+    <BundleResource Include="Resources\2302.png" />
+    <BundleResource Include="Resources\2303.png" />
+    <BundleResource Include="Resources\3001.png" />
+    <BundleResource Include="Resources\3003.png" />
+    <BundleResource Include="Resources\3004.png" />
+    <BundleResource Include="Resources\3006.png" />
+    <BundleResource Include="Resources\3007.png" />
+    <BundleResource Include="Resources\3008.png" />
+    <BundleResource Include="Resources\3009.png" />
+    <BundleResource Include="Resources\3010.png" />
+    <BundleResource Include="Resources\3020.png" />
+    <BundleResource Include="Resources\3022.png" />
+    <BundleResource Include="Resources\3024.png" />
+    <BundleResource Include="Resources\3025.png" />
+    <BundleResource Include="Resources\3026.png" />
+    <BundleResource Include="Resources\3027.png" />
+    <BundleResource Include="Resources\3028.png" />
+    <BundleResource Include="Resources\3029.png" />
+    <BundleResource Include="Resources\3030.png" />
+    <BundleResource Include="Resources\3031.png" />
+    <BundleResource Include="Resources\3033.png" />
+    <BundleResource Include="Resources\3034.png" />
+    <BundleResource Include="Resources\3035.png" />
+    <BundleResource Include="Resources\3036.png" />
+    <BundleResource Include="Resources\3040.png" />
+    <BundleResource Include="Resources\3041.png" />
+    <BundleResource Include="Resources\3042.png" />
+    <BundleResource Include="Resources\3043.png" />
+    <BundleResource Include="Resources\3044.png" />
+    <BundleResource Include="Resources\3046.png" />
+    <BundleResource Include="Resources\3047.png" />
+    <BundleResource Include="Resources\3048.png" />
+    <BundleResource Include="Resources\3050.png" />
+    <BundleResource Include="Resources\3052.png" />
+    <BundleResource Include="Resources\3053.png" />
+    <BundleResource Include="Resources\3056.png" />
+    <BundleResource Include="Resources\3057.png" />
+    <BundleResource Include="Resources\3060.png" />
+    <BundleResource Include="Resources\3065.png" />
+    <BundleResource Include="Resources\3067.png" />
+    <BundleResource Include="Resources\3068.png" />
+    <BundleResource Include="Resources\3069.png" />
+    <BundleResource Include="Resources\3070.png" />
+    <BundleResource Include="Resources\3071.png" />
+    <BundleResource Include="Resources\3072.png" />
+    <BundleResource Include="Resources\3073.png" />
+    <BundleResource Include="Resources\3074.png" />
+    <BundleResource Include="Resources\3075.png" />
+    <BundleResource Include="Resources\3077.png" />
+    <BundleResource Include="Resources\3078.png" />
+    <BundleResource Include="Resources\3082.png" />
+    <BundleResource Include="Resources\3083.png" />
+    <BundleResource Include="Resources\3084.png" />
+    <BundleResource Include="Resources\3085.png" />
+    <BundleResource Include="Resources\3086.png" />
+    <BundleResource Include="Resources\3087.png" />
+    <BundleResource Include="Resources\3089.png" />
+    <BundleResource Include="Resources\3090.png" />
+    <BundleResource Include="Resources\3091.png" />
+    <BundleResource Include="Resources\3092.png" />
+    <BundleResource Include="Resources\3094.png" />
+    <BundleResource Include="Resources\3096.png" />
+    <BundleResource Include="Resources\3097.png" />
+    <BundleResource Include="Resources\3098.png" />
+    <BundleResource Include="Resources\3100.png" />
+    <BundleResource Include="Resources\3101.png" />
+    <BundleResource Include="Resources\3102.png" />
+    <BundleResource Include="Resources\3104.png" />
+    <BundleResource Include="Resources\3105.png" />
+    <BundleResource Include="Resources\3108.png" />
+    <BundleResource Include="Resources\3110.png" />
+    <BundleResource Include="Resources\3111.png" />
+    <BundleResource Include="Resources\3112.png" />
+    <BundleResource Include="Resources\3113.png" />
+    <BundleResource Include="Resources\3114.png" />
+    <BundleResource Include="Resources\3115.png" />
+    <BundleResource Include="Resources\3116.png" />
+    <BundleResource Include="Resources\3117.png" />
+    <BundleResource Include="Resources\3122.png" />
+    <BundleResource Include="Resources\3123.png" />
+    <BundleResource Include="Resources\3124.png" />
+    <BundleResource Include="Resources\3133.png" />
+    <BundleResource Include="Resources\3134.png" />
+    <BundleResource Include="Resources\3135.png" />
+    <BundleResource Include="Resources\3136.png" />
+    <BundleResource Include="Resources\3137.png" />
+    <BundleResource Include="Resources\3139.png" />
+    <BundleResource Include="Resources\3140.png" />
+    <BundleResource Include="Resources\3142.png" />
+    <BundleResource Include="Resources\3143.png" />
+    <BundleResource Include="Resources\3144.png" />
+    <BundleResource Include="Resources\3145.png" />
+    <BundleResource Include="Resources\3146.png" />
+    <BundleResource Include="Resources\3147.png" />
+    <BundleResource Include="Resources\3151.png" />
+    <BundleResource Include="Resources\3152.png" />
+    <BundleResource Include="Resources\3153.png" />
+    <BundleResource Include="Resources\3154.png" />
+    <BundleResource Include="Resources\3155.png" />
+    <BundleResource Include="Resources\3156.png" />
+    <BundleResource Include="Resources\3157.png" />
+    <BundleResource Include="Resources\3158.png" />
+    <BundleResource Include="Resources\3165.png" />
+    <BundleResource Include="Resources\3170.png" />
+    <BundleResource Include="Resources\3174.png" />
+    <BundleResource Include="Resources\3175.png" />
+    <BundleResource Include="Resources\3181.png" />
+    <BundleResource Include="Resources\3184.png" />
+    <BundleResource Include="Resources\3185.png" />
+    <BundleResource Include="Resources\3187.png" />
+    <BundleResource Include="Resources\3190.png" />
+    <BundleResource Include="Resources\3191.png" />
+    <BundleResource Include="Resources\3196.png" />
+    <BundleResource Include="Resources\3197.png" />
+    <BundleResource Include="Resources\3198.png" />
+    <BundleResource Include="Resources\3200.png" />
+    <BundleResource Include="Resources\3211.png" />
+    <BundleResource Include="Resources\3222.png" />
+    <BundleResource Include="Resources\3285.png" />
+    <BundleResource Include="Resources\3301.png" />
+    <BundleResource Include="Resources\3302.png" />
+    <BundleResource Include="Resources\3303.png" />
+    <BundleResource Include="Resources\3340.png" />
+    <BundleResource Include="Resources\3341.png" />
+    <BundleResource Include="Resources\3345.png" />
+    <BundleResource Include="Resources\3348.png" />
+    <BundleResource Include="Resources\3361.png" />
+    <BundleResource Include="Resources\3362.png" />
+    <BundleResource Include="Resources\3363.png" />
+    <BundleResource Include="Resources\3364.png" />
+    <BundleResource Include="Resources\3401.png" />
+    <BundleResource Include="Resources\3410.png" />
+    <BundleResource Include="Resources\3416.png" />
+    <BundleResource Include="Resources\3422.png" />
+    <BundleResource Include="Resources\3455.png" />
+    <BundleResource Include="Resources\3460.png" />
+    <BundleResource Include="Resources\3461.png" />
+    <BundleResource Include="Resources\3462.png" />
+    <BundleResource Include="Resources\3504.png" />
+    <BundleResource Include="Resources\3508.png" />
+    <BundleResource Include="Resources\3512.png" />
+    <BundleResource Include="Resources\3599.png" />
+    <BundleResource Include="Resources\3630.png" />
+    <BundleResource Include="Resources\3631.png" />
+    <BundleResource Include="Resources\3632.png" />
+    <BundleResource Include="Resources\3633.png" />
+    <BundleResource Include="Resources\3634.png" />
+    <BundleResource Include="Resources\3635.png" />
+    <BundleResource Include="Resources\3636.png" />
+    <BundleResource Include="Resources\3637.png" />
+    <BundleResource Include="Resources\3640.png" />
+    <BundleResource Include="Resources\3641.png" />
+    <BundleResource Include="Resources\3642.png" />
+    <BundleResource Include="Resources\3643.png" />
+    <BundleResource Include="Resources\3645.png" />
+    <BundleResource Include="Resources\3647.png" />
+    <BundleResource Include="Resources\3648.png" />
+    <BundleResource Include="Resources\3649.png" />
+    <BundleResource Include="Resources\3671.png" />
+    <BundleResource Include="Resources\3672.png" />
+    <BundleResource Include="Resources\3673.png" />
+    <BundleResource Include="Resources\3675.png" />
+    <BundleResource Include="Resources\3706.png" />
+    <BundleResource Include="Resources\3711.png" />
+    <BundleResource Include="Resources\3715.png" />
+    <BundleResource Include="Resources\3742.png" />
+    <BundleResource Include="Resources\3748.png" />
+    <BundleResource Include="Resources\3751.png" />
+    <BundleResource Include="Resources\3800.png" />
+    <BundleResource Include="Resources\3801.png" />
+    <BundleResource Include="Resources\3802.png" />
+    <BundleResource Include="Resources\3812.png" />
+    <BundleResource Include="Resources\3901.png" />
+    <BundleResource Include="Resources\3902.png" />
+    <BundleResource Include="Resources\3903.png" />
+    <BundleResource Include="Resources\3930.png" />
+    <BundleResource Include="Resources\3931.png" />
+    <BundleResource Include="Resources\3932.png" />
+    <BundleResource Include="Resources\3933.png" />
+    <BundleResource Include="Resources\Empty.png" />
+    <BundleResource Include="Resources\goldIcon.png" />
+    <BundleResource Include="Resources\minion.png" />
+    <BundleResource Include="Resources\Aatrox_Passive.png" />
+    <BundleResource Include="Resources\Ahri_SoulEater.png" />
+    <BundleResource Include="Resources\AkaliTwinDisciplines.png" />
+    <BundleResource Include="Resources\Alistar_Passive.png" />
+    <BundleResource Include="Resources\Anivia_P.png" />
+    <BundleResource Include="Resources\Annie_Passive.png" />
+    <BundleResource Include="Resources\Armordillo_ScavengeArmor.png" />
+    <BundleResource Include="Resources\Armsmaster_MasterOfArms.png" />
+    <BundleResource Include="Resources\Ashe_P.png" />
+    <BundleResource Include="Resources\AurelionSol_Passive.png" />
+    <BundleResource Include="Resources\Azir_Passive.png" />
+    <BundleResource Include="Resources\Bard_Passive.png" />
+    <BundleResource Include="Resources\Blitzcrank_ManaBarrier.png" />
+    <BundleResource Include="Resources\BrandP.png" />
+    <BundleResource Include="Resources\Braum_Passive.png" />
+    <BundleResource Include="Resources\Caitlyn_Headshot.png" />
+    <BundleResource Include="Resources\Cardmaster_SealFate.png" />
+    <BundleResource Include="Resources\Cassiopeia_Passive.png" />
+    <BundleResource Include="Resources\Corki_RapidReload.png" />
+    <BundleResource Include="Resources\Darius_PassiveBuff.png" />
+    <BundleResource Include="Resources\Diana_Passive_LunarBlade.png" />
+    <BundleResource Include="Resources\Draven_passive.png" />
+    <BundleResource Include="Resources\DrMundo_AdrenalineRush2.png" />
+    <BundleResource Include="Resources\Ekko_P.png" />
+    <BundleResource Include="Resources\ElisePassive.png" />
+    <BundleResource Include="Resources\Evelynn_ShadowWalk.png" />
+    <BundleResource Include="Resources\Ezreal_RisingSpellForce.png" />
+    <BundleResource Include="Resources\FallenAngel_Empathize.png" />
+    <BundleResource Include="Resources\Fiddlesticks_Passive.png" />
+    <BundleResource Include="Resources\Fiora_P.png" />
+    <BundleResource Include="Resources\FizzPassive.png" />
+    <BundleResource Include="Resources\Galio_RunicSkin.png" />
+    <BundleResource Include="Resources\Gangplank_Passive.png" />
+    <BundleResource Include="Resources\Garen_Passive.png" />
+    <BundleResource Include="Resources\Gnar_Passive.png" />
+    <BundleResource Include="Resources\GragasPassiveHeal.png" />
+    <BundleResource Include="Resources\GravesTrueGrit.png" />
+    <BundleResource Include="Resources\GreenTerror_TailSpike.png" />
+    <BundleResource Include="Resources\Hecarim_Passive.png" />
+    <BundleResource Include="Resources\Heimerdinger_Passive.png" />
+    <BundleResource Include="Resources\Illaoi_P.png" />
+    <BundleResource Include="Resources\Irelia_IonianFervor.png" />
+    <BundleResource Include="Resources\Janna_Tailwind.png" />
+    <BundleResource Include="Resources\JarvanIV_MartialCadence.png" />
+    <BundleResource Include="Resources\Jayce_Passive.png" />
+    <BundleResource Include="Resources\Jester_CarefulStrikes.png" />
+    <BundleResource Include="Resources\Jhin_P.png" />
+    <BundleResource Include="Resources\Jinx_Passive.png" />
+    <BundleResource Include="Resources\Kalista_Passive.png" />
+    <BundleResource Include="Resources\Karma_Passive.png" />
+    <BundleResource Include="Resources\Karthus_Passive.png" />
+    <BundleResource Include="Resources\Kassadin_Passive.png" />
+    <BundleResource Include="Resources\Katarina_Passive.png" />
+    <BundleResource Include="Resources\Kayle_Passive.png" />
+    <BundleResource Include="Resources\Kennen_Passive.png" />
+    <BundleResource Include="Resources\Khazix_P.png" />
+    <BundleResource Include="Resources\Kindred_Passive.png" />
+    <BundleResource Include="Resources\KogMaw_IcathianSurprise.png" />
+    <BundleResource Include="Resources\LeblancMirrorImage.png" />
+    <BundleResource Include="Resources\LeeSinPassive.png" />
+    <BundleResource Include="Resources\LeonaSunlight.png" />
+    <BundleResource Include="Resources\Lissandra_Passive.png" />
+    <BundleResource Include="Resources\Lucian_Passive.png" />
+    <BundleResource Include="Resources\Lulu_PixFaerieCompanion.png" />
+    <BundleResource Include="Resources\LuxIlluminatingFraulein.png" />
+    <BundleResource Include="Resources\Malphite_GraniteShield.png" />
+    <BundleResource Include="Resources\Malzahar_Passive.png" />
+    <BundleResource Include="Resources\Maokai_Passive.png" />
+    <BundleResource Include="Resources\MasterYi_Passive1.png" />
+    <BundleResource Include="Resources\MissFortune_W.png" />
+    <BundleResource Include="Resources\MonkeyKingStoneSkin.png" />
+    <BundleResource Include="Resources\MordekaiserPassive.png" />
+    <BundleResource Include="Resources\NamiPassive.png" />
+    <BundleResource Include="Resources\Nasus_Passive.png" />
+    <BundleResource Include="Resources\Nautilus_StaggeringBlow.png" />
+    <BundleResource Include="Resources\Nidalee_Passive.png" />
+    <BundleResource Include="Resources\Nocturne_UmbraBlades.png" />
+    <BundleResource Include="Resources\Olaf_Passive.png" />
+    <BundleResource Include="Resources\OriannaPassive.png" />
+    <BundleResource Include="Resources\Pantheon_AOZ.png" />
+    <BundleResource Include="Resources\Poppy_Passive.png" />
+    <BundleResource Include="Resources\Quinn_Passive.png" />
+    <BundleResource Include="Resources\RekSai_Passive.png" />
+    <BundleResource Include="Resources\Renekton_Predator.png" />
+    <BundleResource Include="Resources\Rengar_Passive.png" />
+    <BundleResource Include="Resources\RivenRunicBlades.png" />
+    <BundleResource Include="Resources\Rumble_Junkyard Titan1.png" />
+    <BundleResource Include="Resources\Ryze_P.png" />
+    <BundleResource Include="Resources\SadMummy_CorpseExplosion.png" />
+    <BundleResource Include="Resources\Sejuani_Passive.png" />
+    <BundleResource Include="Resources\shadowninja_P.png" />
+    <BundleResource Include="Resources\Shen_Passive.png" />
+    <BundleResource Include="Resources\ShyvanaReinforcedScales.png" />
+    <BundleResource Include="Resources\Singed_Passive.png" />
+    <BundleResource Include="Resources\Sion_Passive1.png" />
+    <BundleResource Include="Resources\Sivir_Passive.png" />
+    <BundleResource Include="Resources\Skarner_Passive.png" />
+    <BundleResource Include="Resources\Sona_Passive_Charged.png" />
+    <BundleResource Include="Resources\Soraka_Passive.png" />
+    <BundleResource Include="Resources\SwainCarrionRenewal.png" />
+    <BundleResource Include="Resources\SyndraPassive.png" />
+    <BundleResource Include="Resources\TahmKench_P.png" />
+    <BundleResource Include="Resources\Taliyah_Passive.png" />
+    <BundleResource Include="Resources\TalonMercy.png" />
+    <BundleResource Include="Resources\Taric_Passive.png" />
+    <BundleResource Include="Resources\Teemo_P.png" />
+    <BundleResource Include="Resources\Thresh_Passive.png" />
+    <BundleResource Include="Resources\Tristana_Passive.png" />
+    <BundleResource Include="Resources\Trundle_Passive.png" />
+    <BundleResource Include="Resources\Tryndamere_Passive.png" />
+    <BundleResource Include="Resources\Twitch_Passive.png" />
+    <BundleResource Include="Resources\Udyr_MonkeysAgility.png" />
+    <BundleResource Include="Resources\Urgot_Passive.png" />
+    <BundleResource Include="Resources\VarusPassive.png" />
+    <BundleResource Include="Resources\Vayne_NightHunter.png" />
+    <BundleResource Include="Resources\Veigar_Entropy.png" />
+    <BundleResource Include="Resources\Velkoz_Passive.png" />
+    <BundleResource Include="Resources\Viktor_Passive.png" />
+    <BundleResource Include="Resources\ViPassive.png" />
+    <BundleResource Include="Resources\VladimirP.png" />
+    <BundleResource Include="Resources\VolibearPassive.png" />
+    <BundleResource Include="Resources\Warwick_InnerHunger.png" />
+    <BundleResource Include="Resources\Xerath_Passive1.png" />
+    <BundleResource Include="Resources\XinZhao_TirelessWarrior.png" />
+    <BundleResource Include="Resources\Yasuo_Passive.png" />
+    <BundleResource Include="Resources\Yeti_FrostNova.png" />
+    <BundleResource Include="Resources\ZacPassive.png" />
+    <BundleResource Include="Resources\ZiggsPassiveReady.png" />
+    <BundleResource Include="Resources\Zilean_Passive.png" />
+    <BundleResource Include="Resources\ZyraP.png" />
+    <BundleResource Include="Resources\AatroxE.png" />
+    <BundleResource Include="Resources\AatroxQ.png" />
+    <BundleResource Include="Resources\AatroxR.png" />
+    <BundleResource Include="Resources\AatroxW.png" />
+    <BundleResource Include="Resources\AbsoluteZero.png" />
+    <BundleResource Include="Resources\AhriFoxFire.png" />
+    <BundleResource Include="Resources\AhriOrbofDeception.png" />
+    <BundleResource Include="Resources\AhriSeduce.png" />
+    <BundleResource Include="Resources\AhriTumble.png" />
+    <BundleResource Include="Resources\AkaliMota.png" />
+    <BundleResource Include="Resources\AkaliShadowDance.png" />
+    <BundleResource Include="Resources\AkaliShadowSwipe.png" />
+    <BundleResource Include="Resources\AkaliSmokeBomb.png" />
+    <BundleResource Include="Resources\AlphaStrike.png" />
+    <BundleResource Include="Resources\AsheQ.png" />
+    <BundleResource Include="Resources\AsheSpiritOfTheHawk.png" />
+    <BundleResource Include="Resources\AspectOfTheCougar.png" />
+    <BundleResource Include="Resources\AuraofDespair.png" />
+    <BundleResource Include="Resources\AurelionSolE.png" />
+    <BundleResource Include="Resources\AurelionSolQ.png" />
+    <BundleResource Include="Resources\AurelionSolR.png" />
+    <BundleResource Include="Resources\AurelionSolW.png" />
+    <BundleResource Include="Resources\AzirEWrapper.png" />
+    <BundleResource Include="Resources\AzirQWrapper.png" />
+    <BundleResource Include="Resources\AzirR.png" />
+    <BundleResource Include="Resources\AzirW.png" />
+    <BundleResource Include="Resources\BandageToss.png" />
+    <BundleResource Include="Resources\BardE.png" />
+    <BundleResource Include="Resources\BardQ.png" />
+    <BundleResource Include="Resources\BardR.png" />
+    <BundleResource Include="Resources\BardW.png" />
+    <BundleResource Include="Resources\BlackShield.png" />
+    <BundleResource Include="Resources\BlindingDart.png" />
+    <BundleResource Include="Resources\BlindMonkEOne.png" />
+    <BundleResource Include="Resources\BlindMonkQOne.png" />
+    <BundleResource Include="Resources\BlindMonkRKick.png" />
+    <BundleResource Include="Resources\BlindMonkWOne.png" />
+    <BundleResource Include="Resources\BloodBoil.png" />
+    <BundleResource Include="Resources\BloodScent.png" />
+    <BundleResource Include="Resources\BrandE.png" />
+    <BundleResource Include="Resources\BrandQ.png" />
+    <BundleResource Include="Resources\BrandR.png" />
+    <BundleResource Include="Resources\BrandW.png" />
+    <BundleResource Include="Resources\BraumE.png" />
+    <BundleResource Include="Resources\BraumQ.png" />
+    <BundleResource Include="Resources\BraumRWrapper.png" />
+    <BundleResource Include="Resources\BraumW.png" />
+    <BundleResource Include="Resources\BurningAgony.png" />
+    <BundleResource Include="Resources\Bushwhack.png" />
+    <BundleResource Include="Resources\CaitlynAceintheHole.png" />
+    <BundleResource Include="Resources\CaitlynEntrapment.png" />
+    <BundleResource Include="Resources\CaitlynPiltoverPeacemaker.png" />
+    <BundleResource Include="Resources\CaitlynYordleTrap.png" />
+    <BundleResource Include="Resources\CardmasterStack.png" />
+    <BundleResource Include="Resources\CarpetBomb.png" />
+    <BundleResource Include="Resources\CassiopeiaE.png" />
+    <BundleResource Include="Resources\CassiopeiaQ.png" />
+    <BundleResource Include="Resources\CassiopeiaR.png" />
+    <BundleResource Include="Resources\CassiopeiaW.png" />
+    <BundleResource Include="Resources\ChronoShift.png" />
+    <BundleResource Include="Resources\Consume.png" />
+    <BundleResource Include="Resources\Crowstorm.png" />
+    <BundleResource Include="Resources\Crystallize.png" />
+    <BundleResource Include="Resources\CurseoftheSadMummy.png" />
+    <BundleResource Include="Resources\DariusAxeGrabCone.png" />
+    <BundleResource Include="Resources\DariusCleave.png" />
+    <BundleResource Include="Resources\DariusExecute.png" />
+    <BundleResource Include="Resources\DariusNoxianTacticsONH.png" />
+    <BundleResource Include="Resources\DarkBindingMissile.png" />
+    <BundleResource Include="Resources\Deceive.png" />
+    <BundleResource Include="Resources\DefensiveBallCurl.png" />
+    <BundleResource Include="Resources\Destiny.png" />
+    <BundleResource Include="Resources\DianaArc.png" />
+    <BundleResource Include="Resources\DianaOrbs.png" />
+    <BundleResource Include="Resources\DianaTeleport.png" />
+    <BundleResource Include="Resources\DianaVortex.png" />
+    <BundleResource Include="Resources\Disintegrate.png" />
+    <BundleResource Include="Resources\Drain.png" />
+    <BundleResource Include="Resources\DravenDoubleShot.png" />
+    <BundleResource Include="Resources\DravenFury.png" />
+    <BundleResource Include="Resources\DravenRCast.png" />
+    <BundleResource Include="Resources\DravenSpinning.png" />
+    <BundleResource Include="Resources\EkkoE.png" />
+    <BundleResource Include="Resources\EkkoQ.png" />
+    <BundleResource Include="Resources\EkkoR.png" />
+    <BundleResource Include="Resources\EkkoW.png" />
+    <BundleResource Include="Resources\EliseHumanE.png" />
+    <BundleResource Include="Resources\EliseHumanQ.png" />
+    <BundleResource Include="Resources\EliseHumanW.png" />
+    <BundleResource Include="Resources\EliseR.png" />
+    <BundleResource Include="Resources\EnchantedCrystalArrow.png" />
+    <BundleResource Include="Resources\EvelynnE.png" />
+    <BundleResource Include="Resources\EvelynnQ.png" />
+    <BundleResource Include="Resources\EvelynnR.png" />
+    <BundleResource Include="Resources\EvelynnW.png" />
+    <BundleResource Include="Resources\EyeOfTheStorm.png" />
+    <BundleResource Include="Resources\EzrealArcaneShift.png" />
+    <BundleResource Include="Resources\EzrealEssenceFlux.png" />
+    <BundleResource Include="Resources\EzrealMysticShot.png" />
+    <BundleResource Include="Resources\EzrealTrueshotBarrage.png" />
+    <BundleResource Include="Resources\Feast.png" />
+    <BundleResource Include="Resources\FeralScream.png" />
+    <BundleResource Include="Resources\FerociousHowl.png" />
+    <BundleResource Include="Resources\FiddlesticksDarkWind.png" />
+    <BundleResource Include="Resources\FioraE.png" />
+    <BundleResource Include="Resources\FioraQ.png" />
+    <BundleResource Include="Resources\FioraR.png" />
+    <BundleResource Include="Resources\FioraW.png" />
+    <BundleResource Include="Resources\FizzJump.png" />
+    <BundleResource Include="Resources\FizzMarinerDoom.png" />
+    <BundleResource Include="Resources\FizzPiercingStrike.png" />
+    <BundleResource Include="Resources\FizzSeastonePassive.png" />
+    <BundleResource Include="Resources\FlashFrost.png" />
+    <BundleResource Include="Resources\Fling.png" />
+    <BundleResource Include="Resources\ForcePulse.png" />
+    <BundleResource Include="Resources\Frostbite.png" />
+    <BundleResource Include="Resources\GalioBulwark.png" />
+    <BundleResource Include="Resources\GalioIdolOfDurand.png" />
+    <BundleResource Include="Resources\GalioResoluteSmite.png" />
+    <BundleResource Include="Resources\GalioRighteousGust.png" />
+    <BundleResource Include="Resources\GangplankE.png" />
+    <BundleResource Include="Resources\GangplankQWrapper.png" />
+    <BundleResource Include="Resources\GangplankR.png" />
+    <BundleResource Include="Resources\GangplankW.png" />
+    <BundleResource Include="Resources\GarenE.png" />
+    <BundleResource Include="Resources\GarenQ.png" />
+    <BundleResource Include="Resources\GarenR.png" />
+    <BundleResource Include="Resources\GarenW.png" />
+    <BundleResource Include="Resources\GGun.png" />
+    <BundleResource Include="Resources\GlacialStorm.png" />
+    <BundleResource Include="Resources\GnarE.png" />
+    <BundleResource Include="Resources\GnarQ.png" />
+    <BundleResource Include="Resources\GnarR.png" />
+    <BundleResource Include="Resources\GnarW.png" />
+    <BundleResource Include="Resources\GragasE.png" />
+    <BundleResource Include="Resources\GragasQ.png" />
+    <BundleResource Include="Resources\GragasR.png" />
+    <BundleResource Include="Resources\GragasW.png" />
+    <BundleResource Include="Resources\GravesChargeShot.png" />
+    <BundleResource Include="Resources\GravesMove.png" />
+    <BundleResource Include="Resources\GravesQLineSpell.png" />
+    <BundleResource Include="Resources\GravesSmokeGrenade.png" />
+    <BundleResource Include="Resources\HallucinateFull.png" />
+    <BundleResource Include="Resources\Headbutt.png" />
+    <BundleResource Include="Resources\HecarimRamp.png" />
+    <BundleResource Include="Resources\HecarimRapidSlash.png" />
+    <BundleResource Include="Resources\HecarimUlt.png" />
+    <BundleResource Include="Resources\HecarimW.png" />
+    <BundleResource Include="Resources\HeimerdingerE.png" />
+    <BundleResource Include="Resources\HeimerdingerQ.png" />
+    <BundleResource Include="Resources\HeimerdingerR.png" />
+    <BundleResource Include="Resources\HeimerdingerW.png" />
+    <BundleResource Include="Resources\Highlander.png" />
+    <BundleResource Include="Resources\HowlingGale.png" />
+    <BundleResource Include="Resources\HungeringStrike.png" />
+    <BundleResource Include="Resources\HuntersCall.png" />
+    <BundleResource Include="Resources\IceBlast.png" />
+    <BundleResource Include="Resources\IllaoiE.png" />
+    <BundleResource Include="Resources\IllaoiQ.png" />
+    <BundleResource Include="Resources\IllaoiR.png" />
+    <BundleResource Include="Resources\IllaoiW.png" />
+    <BundleResource Include="Resources\Incinerate.png" />
+    <BundleResource Include="Resources\InfectedCleaverMissileCast.png" />
+    <BundleResource Include="Resources\InfernalGuardian.png" />
+    <BundleResource Include="Resources\InfiniteDuress.png" />
+    <BundleResource Include="Resources\InsanityPotion.png" />
+    <BundleResource Include="Resources\IreliaEquilibriumStrike.png" />
+    <BundleResource Include="Resources\IreliaGatotsu.png" />
+    <BundleResource Include="Resources\IreliaHitenStyle.png" />
+    <BundleResource Include="Resources\IreliaTranscendentBlades.png" />
+    <BundleResource Include="Resources\JackInTheBox.png" />
+    <BundleResource Include="Resources\JarvanIVCataclysm.png" />
+    <BundleResource Include="Resources\JarvanIVDemacianStandard.png" />
+    <BundleResource Include="Resources\JarvanIVDragonStrike.png" />
+    <BundleResource Include="Resources\JarvanIVGoldenAegis.png" />
+    <BundleResource Include="Resources\JavelinToss.png" />
+    <BundleResource Include="Resources\JaxCounterStrike.png" />
+    <BundleResource Include="Resources\JaxEmpowerTwo.png" />
+    <BundleResource Include="Resources\JaxLeapStrike.png" />
+    <BundleResource Include="Resources\JaxRelentlessAssault.png" />
+    <BundleResource Include="Resources\JayceStanceHtG.png" />
+    <BundleResource Include="Resources\JayceStaticField.png" />
+    <BundleResource Include="Resources\JayceThunderingBlow.png" />
+    <BundleResource Include="Resources\JayceToTheSkies.png" />
+    <BundleResource Include="Resources\JhinE.png" />
+    <BundleResource Include="Resources\JhinQ.png" />
+    <BundleResource Include="Resources\JhinR.png" />
+    <BundleResource Include="Resources\JhinW.png" />
+    <BundleResource Include="Resources\JinxE.png" />
+    <BundleResource Include="Resources\JinxQ.png" />
+    <BundleResource Include="Resources\JinxR.png" />
+    <BundleResource Include="Resources\JinxW.png" />
+    <BundleResource Include="Resources\JudicatorDivineBlessing.png" />
+    <BundleResource Include="Resources\JudicatorIntervention.png" />
+    <BundleResource Include="Resources\JudicatorReckoning.png" />
+    <BundleResource Include="Resources\JudicatorRighteousFury.png" />
+    <BundleResource Include="Resources\KalistaExpungeWrapper.png" />
+    <BundleResource Include="Resources\KalistaMysticShot.png" />
+    <BundleResource Include="Resources\KalistaRx.png" />
+    <BundleResource Include="Resources\KalistaW.png" />
+    <BundleResource Include="Resources\KarmaMantra.png" />
+    <BundleResource Include="Resources\KarmaQ.png" />
+    <BundleResource Include="Resources\KarmaSolKimShield.png" />
+    <BundleResource Include="Resources\KarmaSpiritBind.png" />
+    <BundleResource Include="Resources\KarthusDefile.png" />
+    <BundleResource Include="Resources\KarthusFallenOne.png" />
+    <BundleResource Include="Resources\KarthusLayWasteA1.png" />
+    <BundleResource Include="Resources\KarthusWallOfPain.png" />
+    <BundleResource Include="Resources\KatarinaE.png" />
+    <BundleResource Include="Resources\KatarinaQ.png" />
+    <BundleResource Include="Resources\KatarinaR.png" />
+    <BundleResource Include="Resources\KatarinaW.png" />
+    <BundleResource Include="Resources\KennenBringTheLight.png" />
+    <BundleResource Include="Resources\KennenLightningRush.png" />
+    <BundleResource Include="Resources\KennenShurikenHurlMissile1.png" />
+    <BundleResource Include="Resources\KennenShurikenStorm.png" />
+    <BundleResource Include="Resources\KhazixE.png" />
+    <BundleResource Include="Resources\KhazixQ.png" />
+    <BundleResource Include="Resources\KhazixR.png" />
+    <BundleResource Include="Resources\KhazixW.png" />
+    <BundleResource Include="Resources\KindredEWrapper.png" />
+    <BundleResource Include="Resources\KindredQ.png" />
+    <BundleResource Include="Resources\KindredR.png" />
+    <BundleResource Include="Resources\KindredW.png" />
+    <BundleResource Include="Resources\KogMawBioArcaneBarrage.png" />
+    <BundleResource Include="Resources\KogMawLivingArtillery.png" />
+    <BundleResource Include="Resources\KogMawQ.png" />
+    <BundleResource Include="Resources\KogMawVoidOoze.png" />
+    <BundleResource Include="Resources\Landslide.png" />
+    <BundleResource Include="Resources\LeblancChaosOrb.png" />
+    <BundleResource Include="Resources\LeblancMimic.png" />
+    <BundleResource Include="Resources\LeblancSlide.png" />
+    <BundleResource Include="Resources\LeblancSoulShackle.png" />
+    <BundleResource Include="Resources\LeonaShieldOfDaybreak.png" />
+    <BundleResource Include="Resources\LeonaSolarBarrier.png" />
+    <BundleResource Include="Resources\LeonaSolarFlare.png" />
+    <BundleResource Include="Resources\LeonaZenithBlade.png" />
+    <BundleResource Include="Resources\LissandraE.png" />
+    <BundleResource Include="Resources\LissandraQ.png" />
+    <BundleResource Include="Resources\LissandraR.png" />
+    <BundleResource Include="Resources\LissandraW.png" />
+    <BundleResource Include="Resources\LucianE.png" />
+    <BundleResource Include="Resources\LucianQ.png" />
+    <BundleResource Include="Resources\LucianR.png" />
+    <BundleResource Include="Resources\LucianW.png" />
+    <BundleResource Include="Resources\LuluE.png" />
+    <BundleResource Include="Resources\LuluQ.png" />
+    <BundleResource Include="Resources\LuluR.png" />
+    <BundleResource Include="Resources\LuluW.png" />
+    <BundleResource Include="Resources\LuxLightBinding.png" />
+    <BundleResource Include="Resources\LuxLightStrikeKugel.png" />
+    <BundleResource Include="Resources\LuxMaliceCannon.png" />
+    <BundleResource Include="Resources\LuxPrismaticWave.png" />
+    <BundleResource Include="Resources\MalzaharE.png" />
+    <BundleResource Include="Resources\MalzaharQ.png" />
+    <BundleResource Include="Resources\MalzaharR.png" />
+    <BundleResource Include="Resources\MalzaharW.png" />
+    <BundleResource Include="Resources\MaokaiDrain3.png" />
+    <BundleResource Include="Resources\MaokaiSapling2.png" />
+    <BundleResource Include="Resources\MaokaiTrunkLine.png" />
+    <BundleResource Include="Resources\MaokaiUnstableGrowth.png" />
+    <BundleResource Include="Resources\Masochism.png" />
+    <BundleResource Include="Resources\Meditate.png" />
+    <BundleResource Include="Resources\MegaAdhesive.png" />
+    <BundleResource Include="Resources\MissFortuneBulletTime.png" />
+    <BundleResource Include="Resources\MissFortuneRicochetShot.png" />
+    <BundleResource Include="Resources\MissFortuneScattershot.png" />
+    <BundleResource Include="Resources\MissFortuneViciousStrikes.png" />
+    <BundleResource Include="Resources\MissileBarrage.png" />
+    <BundleResource Include="Resources\MoltenShield.png" />
+    <BundleResource Include="Resources\MonkeyKingDecoy.png" />
+    <BundleResource Include="Resources\MonkeyKingDoubleAttack.png" />
+    <BundleResource Include="Resources\MonkeyKingNimbus.png" />
+    <BundleResource Include="Resources\MonkeyKingSpinToWin.png" />
+    <BundleResource Include="Resources\MordekaiserChildrenOfTheGrave.png" />
+    <BundleResource Include="Resources\MordekaiserCreepingDeathCast.png" />
+    <BundleResource Include="Resources\MordekaiserMaceOfSpades.png" />
+    <BundleResource Include="Resources\MordekaiserSyphonOfDestruction.png" />
+    <BundleResource Include="Resources\MoveQuick.png" />
+    <BundleResource Include="Resources\NamiE.png" />
+    <BundleResource Include="Resources\NamiQ.png" />
+    <BundleResource Include="Resources\NamiR.png" />
+    <BundleResource Include="Resources\NamiW.png" />
+    <BundleResource Include="Resources\NasusE.png" />
+    <BundleResource Include="Resources\NasusQ.png" />
+    <BundleResource Include="Resources\NasusR.png" />
+    <BundleResource Include="Resources\NasusW.png" />
+    <BundleResource Include="Resources\NautilusAnchorDrag.png" />
+    <BundleResource Include="Resources\NautilusGrandLine.png" />
+    <BundleResource Include="Resources\NautilusPiercingGaze.png" />
+    <BundleResource Include="Resources\NautilusSplashZone.png" />
+    <BundleResource Include="Resources\NetherBlade.png" />
+    <BundleResource Include="Resources\NocturneDuskbringer.png" />
+    <BundleResource Include="Resources\NocturneParanoia.png" />
+    <BundleResource Include="Resources\NocturneShroudofDarkness.png" />
+    <BundleResource Include="Resources\NocturneUnspeakableHorror.png" />
+    <BundleResource Include="Resources\NullLance.png" />
+    <BundleResource Include="Resources\Obduracy.png" />
+    <BundleResource Include="Resources\OlafAxeThrowCast.png" />
+    <BundleResource Include="Resources\OlafFrenziedStrikes.png" />
+    <BundleResource Include="Resources\OlafRagnarok.png" />
+    <BundleResource Include="Resources\OlafRecklessStrike.png" />
+    <BundleResource Include="Resources\OrianaDetonateCommand.png" />
+    <BundleResource Include="Resources\OrianaDissonanceCommand.png" />
+    <BundleResource Include="Resources\OrianaIzunaCommand.png" />
+    <BundleResource Include="Resources\OrianaRedactCommand.png" />
+    <BundleResource Include="Resources\Overdrive.png" />
+    <BundleResource Include="Resources\PantheonE.png" />
+    <BundleResource Include="Resources\PantheonQ.png" />
+    <BundleResource Include="Resources\PantheonRJump.png" />
+    <BundleResource Include="Resources\PantheonW.png" />
+    <BundleResource Include="Resources\PhosphorusBomb.png" />
+    <BundleResource Include="Resources\PickACard.png" />
+    <BundleResource Include="Resources\PoisonTrail.png" />
+    <BundleResource Include="Resources\PoppyE.png" />
+    <BundleResource Include="Resources\PoppyQ.png" />
+    <BundleResource Include="Resources\PoppyR.png" />
+    <BundleResource Include="Resources\PoppyW.png" />
+    <BundleResource Include="Resources\PowerBall.png" />
+    <BundleResource Include="Resources\PowerFist.png" />
+    <BundleResource Include="Resources\PrimalSurge.png" />
+    <BundleResource Include="Resources\Pulverize.png" />
+    <BundleResource Include="Resources\PuncturingTaunt.png" />
+    <BundleResource Include="Resources\QuinnE.png" />
+    <BundleResource Include="Resources\QuinnQ.png" />
+    <BundleResource Include="Resources\QuinnR.png" />
+    <BundleResource Include="Resources\QuinnW.png" />
+    <BundleResource Include="Resources\ReapTheWhirlwind.png" />
+    <BundleResource Include="Resources\RekSaiE.png" />
+    <BundleResource Include="Resources\RekSaiQ.png" />
+    <BundleResource Include="Resources\RekSaiR.png" />
+    <BundleResource Include="Resources\RekSaiW.png" />
+    <BundleResource Include="Resources\RenektonCleave.png" />
+    <BundleResource Include="Resources\RenektonPreExecute.png" />
+    <BundleResource Include="Resources\RenektonReignOfTheTyrant.png" />
+    <BundleResource Include="Resources\RenektonSliceAndDice.png" />
+    <BundleResource Include="Resources\RengarE.png" />
+    <BundleResource Include="Resources\RengarQ.png" />
+    <BundleResource Include="Resources\RengarR.png" />
+    <BundleResource Include="Resources\RengarW.png" />
+    <BundleResource Include="Resources\RiftWalk.png" />
+    <BundleResource Include="Resources\RivenFeint.png" />
+    <BundleResource Include="Resources\RivenFengShuiEngine.png" />
+    <BundleResource Include="Resources\RivenMartyr.png" />
+    <BundleResource Include="Resources\RivenTriCleave.png" />
+    <BundleResource Include="Resources\RocketGrab.png" />
+    <BundleResource Include="Resources\RumbleCarpetBomb.png" />
+    <BundleResource Include="Resources\RumbleFlameThrower.png" />
+    <BundleResource Include="Resources\RumbleGrenade.png" />
+    <BundleResource Include="Resources\RumbleShield.png" />
+    <BundleResource Include="Resources\Rupture.png" />
+    <BundleResource Include="Resources\RyzeE.png" />
+    <BundleResource Include="Resources\RyzeQ.png" />
+    <BundleResource Include="Resources\RyzeR.png" />
+    <BundleResource Include="Resources\RyzeW.png" />
+    <BundleResource Include="Resources\Sadism.png" />
+    <BundleResource Include="Resources\SeismicShard.png" />
+    <BundleResource Include="Resources\SejuaniArcticAssault.png" />
+    <BundleResource Include="Resources\SejuaniGlacialPrisonStart.png" />
+    <BundleResource Include="Resources\SejuaniNorthernWinds.png" />
+    <BundleResource Include="Resources\SejuaniWintersClaw.png" />
+    <BundleResource Include="Resources\ShenE.png" />
+    <BundleResource Include="Resources\ShenQ.png" />
+    <BundleResource Include="Resources\ShenR.png" />
+    <BundleResource Include="Resources\ShenW.png" />
+    <BundleResource Include="Resources\ShyvanaDoubleAttack.png" />
+    <BundleResource Include="Resources\ShyvanaFireball.png" />
+    <BundleResource Include="Resources\ShyvanaImmolationAura.png" />
+    <BundleResource Include="Resources\ShyvanaTransformCast.png" />
+    <BundleResource Include="Resources\SionE.png" />
+    <BundleResource Include="Resources\SionQ.png" />
+    <BundleResource Include="Resources\SionR.png" />
+    <BundleResource Include="Resources\SionW.png" />
+    <BundleResource Include="Resources\SivirE.png" />
+    <BundleResource Include="Resources\SivirQ.png" />
+    <BundleResource Include="Resources\SivirR.png" />
+    <BundleResource Include="Resources\SivirW.png" />
+    <BundleResource Include="Resources\SkarnerExoskeleton.png" />
+    <BundleResource Include="Resources\SkarnerFracture.png" />
+    <BundleResource Include="Resources\SkarnerImpale.png" />
+    <BundleResource Include="Resources\SkarnerVirulentSlash.png" />
+    <BundleResource Include="Resources\SonaE.png" />
+    <BundleResource Include="Resources\SonaQ.png" />
+    <BundleResource Include="Resources\SonaR.png" />
+    <BundleResource Include="Resources\SonaW.png" />
+    <BundleResource Include="Resources\SorakaE.png" />
+    <BundleResource Include="Resources\SorakaQ.png" />
+    <BundleResource Include="Resources\SorakaR.png" />
+    <BundleResource Include="Resources\SorakaW.png" />
+    <BundleResource Include="Resources\SoulShackles.png" />
+    <BundleResource Include="Resources\SowTheWind.png" />
+    <BundleResource Include="Resources\StaticField.png" />
+    <BundleResource Include="Resources\SwainDecrepify.png" />
+    <BundleResource Include="Resources\SwainMetamorphism.png" />
+    <BundleResource Include="Resources\SwainShadowGrasp.png" />
+    <BundleResource Include="Resources\SwainTorment.png" />
+    <BundleResource Include="Resources\SyndraE.png" />
+    <BundleResource Include="Resources\SyndraQ.png" />
+    <BundleResource Include="Resources\SyndraR.png" />
+    <BundleResource Include="Resources\SyndraW.png" />
+    <BundleResource Include="Resources\TahmKenchE.png" />
+    <BundleResource Include="Resources\TahmKenchNewR.png" />
+    <BundleResource Include="Resources\TahmKenchQ.png" />
+    <BundleResource Include="Resources\TahmKenchW.png" />
+    <BundleResource Include="Resources\TaliyahE.png" />
+    <BundleResource Include="Resources\TaliyahQ.png" />
+    <BundleResource Include="Resources\TaliyahR.png" />
+    <BundleResource Include="Resources\TaliyahWVC.png" />
+    <BundleResource Include="Resources\TalonCutthroat.png" />
+    <BundleResource Include="Resources\TalonNoxianDiplomacy.png" />
+    <BundleResource Include="Resources\TalonRake.png" />
+    <BundleResource Include="Resources\TalonShadowAssault.png" />
+    <BundleResource Include="Resources\Tantrum.png" />
+    <BundleResource Include="Resources\TaricE.png" />
+    <BundleResource Include="Resources\TaricQ.png" />
+    <BundleResource Include="Resources\TaricR.png" />
+    <BundleResource Include="Resources\TaricW.png" />
+    <BundleResource Include="Resources\TeemoRCast.png" />
+    <BundleResource Include="Resources\Terrify.png" />
+    <BundleResource Include="Resources\ThreshE.png" />
+    <BundleResource Include="Resources\ThreshQ.png" />
+    <BundleResource Include="Resources\ThreshRPenta.png" />
+    <BundleResource Include="Resources\ThreshW.png" />
+    <BundleResource Include="Resources\TimeWarp.png" />
+    <BundleResource Include="Resources\TormentedSoil.png" />
+    <BundleResource Include="Resources\ToxicShot.png" />
+    <BundleResource Include="Resources\Tremors2.png" />
+    <BundleResource Include="Resources\TristanaE.png" />
+    <BundleResource Include="Resources\TristanaQ.png" />
+    <BundleResource Include="Resources\TristanaR.png" />
+    <BundleResource Include="Resources\TristanaW.png" />
+    <BundleResource Include="Resources\TriumphantRoar.png" />
+    <BundleResource Include="Resources\TrundleCircle.png" />
+    <BundleResource Include="Resources\trundledesecrate.png" />
+    <BundleResource Include="Resources\TrundlePain.png" />
+    <BundleResource Include="Resources\TrundleTrollSmash.png" />
+    <BundleResource Include="Resources\TryndamereE.png" />
+    <BundleResource Include="Resources\TryndamereQ.png" />
+    <BundleResource Include="Resources\TryndamereW.png" />
+    <BundleResource Include="Resources\TwitchExpunge.png" />
+    <BundleResource Include="Resources\TwitchFullAutomatic.png" />
+    <BundleResource Include="Resources\TwitchHideInShadows.png" />
+    <BundleResource Include="Resources\TwitchVenomCask.png" />
+    <BundleResource Include="Resources\TwoShivPoison.png" />
+    <BundleResource Include="Resources\UdyrBearStance.png" />
+    <BundleResource Include="Resources\UdyrPhoenixStance.png" />
+    <BundleResource Include="Resources\UdyrTigerStance.png" />
+    <BundleResource Include="Resources\UdyrTurtleStance.png" />
+    <BundleResource Include="Resources\UFSlash.png" />
+    <BundleResource Include="Resources\UndyingRage.png" />
+    <BundleResource Include="Resources\UrgotHeatseekingMissile.png" />
+    <BundleResource Include="Resources\UrgotPlasmaGrenade.png" />
+    <BundleResource Include="Resources\UrgotSwap2.png" />
+    <BundleResource Include="Resources\UrgotTerrorCapacitorActive2.png" />
+    <BundleResource Include="Resources\VarusE.png" />
+    <BundleResource Include="Resources\VarusQ.png" />
+    <BundleResource Include="Resources\VarusR.png" />
+    <BundleResource Include="Resources\VarusW.png" />
+    <BundleResource Include="Resources\VayneCondemn.png" />
+    <BundleResource Include="Resources\VayneInquisition.png" />
+    <BundleResource Include="Resources\VayneSilveredBolts.png" />
+    <BundleResource Include="Resources\VayneTumble.png" />
+    <BundleResource Include="Resources\VeigarBalefulStrike.png" />
+    <BundleResource Include="Resources\VeigarDarkMatter.png" />
+    <BundleResource Include="Resources\VeigarEventHorizon.png" />
+    <BundleResource Include="Resources\VeigarR.png" />
+    <BundleResource Include="Resources\VelkozE.png" />
+    <BundleResource Include="Resources\VelkozQ.png" />
+    <BundleResource Include="Resources\VelkozR.png" />
+    <BundleResource Include="Resources\VelkozW.png" />
+    <BundleResource Include="Resources\ViE.png" />
+    <BundleResource Include="Resources\ViktorChaosStorm.png" />
+    <BundleResource Include="Resources\ViktorDeathRay.png" />
+    <BundleResource Include="Resources\ViktorGravitonField.png" />
+    <BundleResource Include="Resources\ViktorPowerTransfer.png" />
+    <BundleResource Include="Resources\ViQ.png" />
+    <BundleResource Include="Resources\ViR.png" />
+    <BundleResource Include="Resources\ViW.png" />
+    <BundleResource Include="Resources\VladimirE.png" />
+    <BundleResource Include="Resources\VladimirHemoplague.png" />
+    <BundleResource Include="Resources\VladimirQ.png" />
+    <BundleResource Include="Resources\VladimirSanguinePool.png" />
+    <BundleResource Include="Resources\VolibearE.png" />
+    <BundleResource Include="Resources\VolibearQ.png" />
+    <BundleResource Include="Resources\VolibearR.png" />
+    <BundleResource Include="Resources\VolibearW.png" />
+    <BundleResource Include="Resources\Volley.png" />
+    <BundleResource Include="Resources\VorpalSpikes.png" />
+    <BundleResource Include="Resources\WildCards.png" />
+    <BundleResource Include="Resources\WujuStyle.png" />
+    <BundleResource Include="Resources\XenZhaoBattleCry.png" />
+    <BundleResource Include="Resources\XenZhaoComboTarget.png" />
+    <BundleResource Include="Resources\XenZhaoParry.png" />
+    <BundleResource Include="Resources\XenZhaoSweep.png" />
+    <BundleResource Include="Resources\XerathArcaneBarrage2.png" />
+    <BundleResource Include="Resources\XerathArcanopulseChargeUp.png" />
+    <BundleResource Include="Resources\XerathLocusOfPower2.png" />
+    <BundleResource Include="Resources\XerathMageSpear.png" />
+    <BundleResource Include="Resources\YasuoDashWrapper.png" />
+    <BundleResource Include="Resources\YasuoQW.png" />
+    <BundleResource Include="Resources\YasuoRKnockUpComboW.png" />
+    <BundleResource Include="Resources\YasuoWMovingWall.png" />
+    <BundleResource Include="Resources\ZacE.png" />
+    <BundleResource Include="Resources\ZacQ.png" />
+    <BundleResource Include="Resources\ZacR.png" />
+    <BundleResource Include="Resources\ZacW.png" />
+    <BundleResource Include="Resources\ZedE.png" />
+    <BundleResource Include="Resources\ZedQ.png" />
+    <BundleResource Include="Resources\ZedR.png" />
+    <BundleResource Include="Resources\ZedW.png" />
+    <BundleResource Include="Resources\ZiggsE.png" />
+    <BundleResource Include="Resources\ZiggsQ.png" />
+    <BundleResource Include="Resources\ZiggsR.png" />
+    <BundleResource Include="Resources\ZiggsW.png" />
+    <BundleResource Include="Resources\ZileanQ.png" />
+    <BundleResource Include="Resources\ZileanW.png" />
+    <BundleResource Include="Resources\ZyraE.png" />
+    <BundleResource Include="Resources\ZyraQ.png" />
+    <BundleResource Include="Resources\ZyraR.png" />
+    <BundleResource Include="Resources\ZyraW.png" />
+    <BundleResource Include="Resources\KledE.png" />
+    <BundleResource Include="Resources\KledQ.png" />
+    <BundleResource Include="Resources\KledR.png" />
+    <BundleResource Include="Resources\KledW.png" />
+    <BundleResource Include="Resources\YorickE.png" />
+    <BundleResource Include="Resources\YorickQ.png" />
+    <BundleResource Include="Resources\YorickR.png" />
+    <BundleResource Include="Resources\YorickW.png" />
+    <BundleResource Include="Resources\Kled_P.png" />
+    <BundleResource Include="Resources\Yorick_P.png" />
+    <BundleResource Include="Resources\Ivern.png" />
+    <BundleResource Include="Resources\IvernW.png" />
+    <BundleResource Include="Resources\IvernR.png" />
+    <BundleResource Include="Resources\IvernQ.png" />
+    <BundleResource Include="Resources\IvernP.png" />
+    <BundleResource Include="Resources\IvernE.png" />
+    <BundleResource Include="Resources\Sona_Splash_6.jpg" />
+    <BundleResource Include="Resources\Star%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="Resources\iTunesArtwork.png" />
+    <ITunesArtwork Include="Resources\iTunesArtwork%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamarin.inapppurchase">
+      <Version>2.8</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.2.2\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.2.2\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.3.163-pre3\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.163-pre3\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Google.iOS.MobileAds.7.11.0\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('..\packages\Xamarin.Google.iOS.MobileAds.7.11.0\build\Xamarin.Google.iOS.MobileAds.targets')" />
+</Project>
