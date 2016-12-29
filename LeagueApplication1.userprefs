@@ -1,17 +1,24 @@
 ﻿<Properties StartupConfiguration="{F70D7C1A-1043-4D18-9C69-D0E4FB3B23FD}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="LeagueApplication1/Pages/TabbedPages.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="testProject Status">
     <Files>
-      <File FileName="LeagueApplication1/Pages/FavoritesMaster.cs" Line="80" Column="48" />
-      <File FileName="LeagueApplication1/Custom Renderes Etc/TwitchStreamCell.cs" Line="52" Column="28" />
-      <File FileName="LeagueApplication1/TwitchLib-master/TwitchLib/TwitchApi.cs" Line="1" Column="1" />
-      <File FileName="LeagueApplication1/Custom Renderes Etc/GroupHeader.cs" Line="27" Column="48" />
       <File FileName="LeagueApplication1/Pages/MasterDetailPage.cs" Line="20" Column="48" />
       <File FileName="LeagueApplication1/Pages/SearchPage.cs" Line="45" Column="33" />
-      <File FileName="LeagueApplication1/App.cs" Line="29" Column="57" />
-      <File FileName="LeagueApplication1/Pages/TabbedPages.cs" Line="24" Column="3" />
-      <File FileName="LeagueApplication1/Pages/ChampionPage.cs" Line="212" Column="49" />
-      <File FileName="LeagueApplication1/Pages/ChampListPage.cs" Line="29" Column="4" />
+      <File FileName="LeagueApplication1/App.cs" Line="10" Column="3" />
+      <File FileName="LeagueApplication1/Pages/xamlSummonerTest.xaml" Line="1" Column="1" />
+      <File FileName="testProject Status" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LeagueApplication1" expanded="True" selected="True">
+            <Node name="LeagueApplication1" expanded="True" />
+            <Node name="LeagueApplication1.iOS" expanded="True">
+              <Node name="ComponentReferenceFolder" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

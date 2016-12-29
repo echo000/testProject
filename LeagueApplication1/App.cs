@@ -15,6 +15,12 @@ namespace LeagueApplication1
 		static RecentDatabase recentDatabase;
 		public static IDevice device;
 		public static IDisplay display;
+		static Application app;
+
+		public static Application CurrentApp
+		{
+			get { return app; }
+		}
 
 		public App()
 		{
