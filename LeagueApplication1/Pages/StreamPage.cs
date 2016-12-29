@@ -5,16 +5,14 @@ using System.Diagnostics;
 
 namespace LeagueApplication1
 {
-	public class SearchPage : ContentPage
+	public class StreamPage : ContentPage
 	{
 		static TwitchApi twitchApi = App.twitchApi;
 		FavoritesMaster fm;
 		ObservableCollection<streamer> Channels;
 		ListView StreamList = new ListView();
 
-#pragma warning disable RECS0165 // Asynchronous methods should return a Task instead of void
 		protected async override void OnAppearing()
-#pragma warning restore RECS0165 // Asynchronous methods should return a Task instead of void
 		{
 			base.OnAppearing();
 			Channels = new ObservableCollection<streamer>();
@@ -35,9 +33,8 @@ namespace LeagueApplication1
 			}
 		}
 
-		public SearchPage(FavoritesMaster Fm)
+		public StreamPage()
 		{
-			fm = Fm;
 			StreamList.ItemTemplate = new DataTemplate(typeof(TwitchStreamCell));
 			StreamList.SeparatorVisibility = SeparatorVisibility.None;
 			StreamList.HasUnevenRows = true;
@@ -95,8 +92,6 @@ namespace LeagueApplication1
 		{
 			Name = name;
 			Url = image;
-			//Views = views;
-			//Status = status;
 			this.Stream = stream;
 		}
 	}

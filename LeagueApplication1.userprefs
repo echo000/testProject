@@ -2,11 +2,15 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="testProject Status">
     <Files>
       <File FileName="LeagueApplication1/App.cs" Line="36" Column="34" />
-      <File FileName="LeagueApplication1/Pages/ProfilePage.xaml.cs" Line="39" Column="25" />
+      <File FileName="LeagueApplication1/Pages/ProfilePage.xaml.cs" Line="39" Column="4" />
       <File FileName="LeagueApplication1/Pages/MyPage.xaml.cs" Line="156" Column="28" />
       <File FileName="LeagueApplication1/Pages/ChampListPage.cs" Line="40" Column="1" />
       <File FileName="LeagueApplication1/Pages/ChampionPage.cs" Line="43" Column="57" />
       <File FileName="LeagueApplication1/Pages/PreviousGamePage.cs" Line="87" Column="137" />
+      <File FileName="LeagueApplication1/Pages/TabbedPages.cs" Line="19" Column="3" />
+      <File FileName="LeagueApplication1/Pages/SearchTabPage.cs" Line="33" Column="6" />
+      <File FileName="LeagueApplication1/Pages/LoginPage.cs" Line="17" Column="32" />
+      <File FileName="LeagueApplication1/Pages/StreamPage.cs" Line="36" Column="20" />
       <File FileName="testProject Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>

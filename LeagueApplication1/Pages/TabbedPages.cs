@@ -11,8 +11,9 @@ namespace LeagueApplication1
 	{
 		public TabbedPages(Summoner summoner, Region region)
 		{
-			Children.Add(new MasterPage() { Title = "Streams", Icon = "Streams.png" });
+			Children.Add(new StreamsPage() { Title = "Streams", Icon = "Streams.png" });
 			Children.Add(new ChampsPage() { Title = "Champions", Icon = "Human.png" });
+			Children.Add(new SearchNavPage() { Title = "Search", Icon = "Search.png" });
 			Children.Add(new ProfPage(summoner, region) { Title = "Profile", Icon = "Profile.png" });
 		}
 	}
@@ -20,6 +21,20 @@ namespace LeagueApplication1
 	public class ChampsPage : NavigationPage
 	{
 		public ChampsPage() : base(new ChampListPage())
+		{
+		}
+	}
+
+	public class StreamsPage : NavigationPage
+	{
+		public StreamsPage() : base(new StreamPage())
+		{
+		}
+	}
+
+	public class SearchNavPage : NavigationPage
+	{
+		public SearchNavPage() : base(new SearchTabPage())
 		{
 		}
 	}

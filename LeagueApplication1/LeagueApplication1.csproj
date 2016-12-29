@@ -230,7 +230,7 @@
     <Compile Include="Pages\ChampionPage.cs" />
     <Compile Include="Pages\ChampListPage.cs" />
     <Compile Include="Pages\PreviousGamePage.cs" />
-    <Compile Include="Pages\SearchPage.cs" />
+    <Compile Include="Pages\StreamPage.cs" />
     <Compile Include="Pages\TabbedPages.cs" />
     <Compile Include="Custom Renderes Etc\PreviousGameCell.cs" />
     <Compile Include="Custom Renderes Etc\ExpandedGameCell.cs" />
@@ -251,7 +251,6 @@
     <Compile Include="Utils\AdMobView.cs" />
     <Compile Include="Utils\PreserveAttribute.cs" />
     <Compile Include="Pages\FavoritesMaster.cs" />
-    <Compile Include="Pages\MasterDetailPage.cs" />
     <Compile Include="TwitchLib-master\TwitchLib\Controllers\TwitchController.cs" />
     <Compile Include="TwitchLib-master\TwitchLib\Models\Channel.cs" />
     <Compile Include="TwitchLib-master\TwitchLib\Models\Chat.cs" />
@@ -294,6 +293,7 @@
       <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginPage.cs" />
+    <Compile Include="Pages\SearchTabPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Reactive.PlatformServices">
