@@ -86,7 +86,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchTlsProvider>Default</MtouchTlsProvider>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>beba3a42-873f-4558-907a-c9a40331e213</CodesignProvision>
+    <CodesignProvision>436afbb9-a96e-4eea-b8ed-ea6cad7775e5</CodesignProvision>
     <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
     <MtouchSdkVersion>10.0</MtouchSdkVersion>
   </PropertyGroup>
@@ -305,6 +305,7 @@
     <Compile Include="HtmlLabelRenderer.cs" />
     <Compile Include="AdMobRenderer.cs" />
     <Compile Include="SliderCarouselViewRenderer.cs" />
+    <Compile Include="CredentialsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Atom.png" />
@@ -1406,6 +1407,8 @@
     <BundleResource Include="Resources\IvernE.png" />
     <BundleResource Include="Resources\Sona_Splash_6.jpg" />
     <BundleResource Include="Resources\Star%402x.png" />
+    <BundleResource Include="Resources\Profile%402x.png" />
+    <BundleResource Include="Resources\Streams%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="Resources\iTunesArtwork.png" />

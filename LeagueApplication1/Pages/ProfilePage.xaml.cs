@@ -14,7 +14,7 @@ using System.Diagnostics;
 
 namespace LeagueApplication1
 {
- public partial class RelativeLayoutPage : ContentPage
+ public partial class ProfilePage : ContentPage
 	{
 
 		public static RiotApi api = App.api;
@@ -32,8 +32,7 @@ namespace LeagueApplication1
 		public string skinString = "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{0}_{1}.jpg";
 		static string icon = "http://avatar.leagueoflegends.com/summonerId/{0}/{1}.png";
 
-
-		public RelativeLayoutPage(Summoner summoner, Region region, Page SearchPage)
+		public ProfilePage(Summoner summoner, Region region)
 		{
 			InitializeComponent();
 			nameText.BackgroundColor = Color.FromRgba(0, 0, 0, 0.6);
@@ -47,22 +46,6 @@ namespace LeagueApplication1
 			nameText.Text = summoner.Name;
 
 			summonerIcon.Source = string.Format(icon, region, summoner.Id);
-
-			var infoIcon = new ToolbarItem { Text = "+" };
-			ToolbarItems.Add(infoIcon);
-
-			infoIcon.Clicked += (sender, e) =>
-			{
-				if ((App.FavoriteDatabase.GetItems().Where(item => item.Name == summoner.Name && item.Region == summoner.Region.ToString().ToUpper()).ToList().Count > 0))
-				{
-					UserDialogs.Instance.AlertAsync(summoner.Name + " is already in your favorites, do you really love them that much? ;)", "Error", "Okay");
-				}
-				else
-				{
-					UserDialogs.Instance.AlertAsync(summoner.Name + " has been added to your favorites", "Favorite Added", "Okay");
-					App.FavoriteDatabase.SaveItem(new SearchesAndFavorites { Name = summoner.Name, Region = summoner.Region.ToString().ToUpper(), Icon = icon, summonerID = (int)summoner.Id });
-				}
-			};
 
 			var frequentlyPlayed = Task.Run(async () =>
 			{
@@ -78,7 +61,7 @@ namespace LeagueApplication1
 
 			var MatchListTask = Task.Run(async () =>
 			{
-				var MatchList = await loadMatchHistory(summoner, region, SearchPage);
+				var MatchList = await loadMatchHistory(summoner, region, this);
 				contentVue.Content = MatchList;
 			});
 			MatchListTask.Wait();
@@ -89,13 +72,13 @@ namespace LeagueApplication1
 				{
 					case 0:
 						UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
-						var MatchList = await loadMatchHistory(summoner, region, SearchPage);
+						var MatchList = await loadMatchHistory(summoner, region, this);
 						contentVue.Content = MatchList;
 						UserDialogs.Instance.HideLoading();
 						break;
 					case 1:
 						UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
-						currentGameView = await loadCurrentGameView(summoner, summoner.Region, SearchPage);
+						currentGameView = await loadCurrentGameView(summoner, summoner.Region, this);
 						contentVue.Content = currentGameView;
 						UserDialogs.Instance.HideLoading();
 						break;
@@ -191,7 +174,6 @@ namespace LeagueApplication1
 			};
 			return listView;
 		}
-
 		public static async Task<ScrollView> loadPlayerStats(Summoner summoner, Region region)
 		{
 			var stats = await api.GetStatsSummariesAsync(region, summoner.Id);
@@ -216,7 +198,6 @@ namespace LeagueApplication1
 			scrollView.Content = stack;
 			return scrollView;
 		}
-
 
 		//Loads the current game if there is one
 		public static async Task<ContentView> loadCurrentGameView(Summoner summoner, Region region, Page SearchPage)

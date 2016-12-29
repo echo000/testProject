@@ -102,7 +102,6 @@ namespace LeagueApplication1
 			NavigationPage.SetHasNavigationBar(this, true);
 			ToolbarItems.Add(infoIcon);
 			Title = summoner.Name;
-			BackgroundColor = Color.FromRgb(36, 36, 36);
 			infoIcon.Clicked += (sender, e) =>
 			{
 				if ((App.FavoriteDatabase.GetItems().Where(item => item.Name == summoner.Name && item.Region == summoner.Region.ToString().ToUpper()).ToList().Count > 0))

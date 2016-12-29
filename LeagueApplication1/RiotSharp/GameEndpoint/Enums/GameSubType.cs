@@ -137,6 +137,10 @@ namespace RiotSharp.GameEndpoint.Enums
 		/// <summary>
 		/// Summoners Rift 6x6 Hexakill games.
 		/// </summary>
-		SR_6x6
+		SR_6x6,
+
+		RankedFlexSR,
+
+		RankedFlexTT
     }
 }

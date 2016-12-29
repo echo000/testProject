@@ -132,6 +132,10 @@ namespace RiotSharp.StatsEndpoint.Enums
 		/// <summary>
 		/// Nexus Siege Games
 		/// </summary>
-		Siege
+		Siege,
+
+		RankedFlexSR,
+
+		RankedFlexTT
 	}
 }

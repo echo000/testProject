@@ -17,7 +17,6 @@ namespace LeagueApplication1
 		{
 			favMaster = new FavoritesMaster();
 			Master = favMaster;
-			BackgroundColor = Color.FromRgb(36, 36, 36);
 			Detail = new NavigationPage(new SearchPage(favMaster));
 
 			favMaster.ListView.ItemSelected += async (sender, e) =>
@@ -28,7 +27,7 @@ namespace LeagueApplication1
 					try
 					{
 						UserDialogs.Instance.ShowLoading("Loading " + item.Name, MaskType.Black);
-						Region region = regFromString(item.Region.ToLower());
+						Region region = App.regFromString(item.Region.ToLower());
 						var summoner = await api.GetSummonerAsync(region, item.summonerID);
 						var test = new RelativeLayoutPage(summoner, region, Detail);
 						UserDialogs.Instance.HideLoading();
@@ -64,33 +63,6 @@ namespace LeagueApplication1
 				}
 			};
 
-		}
-		public Region regFromString(string regionName)
-		{
-			switch (regionName)
-			{
-				case "euw":
-					return Region.euw;
-				case "eune":
-					return Region.eune;
-				case "na":
-					return Region.na;
-				case "kr":
-					return Region.kr;
-				case "br":
-					return Region.br;
-				case "lan":
-					return Region.lan;
-				case "las":
-					return Region.las;
-				case "oce":
-					return Region.oce;
-				case "ru":
-					return Region.ru;
-				case "tr":
-					return Region.tr;
-			}
-			return Region.global;
 		}
 	}
 }

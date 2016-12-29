@@ -26,11 +26,9 @@ namespace LeagueApplication1
 				ItemTemplate = imageTemplate,
 				ItemsSource = grouped,
 				HasUnevenRows = true,
-				GroupDisplayBinding = new Binding("LongName"),
-				BackgroundColor = Color.FromRgb(36, 36, 36)
+				GroupDisplayBinding = new Binding("LongName")
 			};
 			var adView = new AdMobView { WidthRequest = 320, HeightRequest = 50 };
-			BackgroundColor = Color.FromRgb(36, 36, 36);
 			var stackLayout = new StackLayout
 			{
 				Children = {

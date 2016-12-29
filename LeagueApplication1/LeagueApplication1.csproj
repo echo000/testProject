@@ -290,6 +290,11 @@
     <Compile Include="Custom Renderes Etc\FilterControl.cs" />
     <Compile Include="CarouselLayout.cs" />
     <Compile Include="Pages\SliderView.cs" />
+    <Compile Include="Utils\ICredentialsService.cs" />
+    <Compile Include="Pages\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Reactive.PlatformServices">
@@ -453,6 +458,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Pages\xamlSummonerTest.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

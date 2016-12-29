@@ -70,6 +70,10 @@ namespace RiotSharp.GameEndpoint.Enums.Converters
                     return GameSubType.Bilgewater;
 				case "SR_6x6":
 					return GameSubType.SR_6x6;
+				case "RANKED_FLEX_SR":
+					return GameSubType.RankedFlexSR;
+				case "RANKED_FLEX_TT":
+					return GameSubType.RankedFlexTT;
                 default:
                     return null;
             }
@@ -155,6 +159,12 @@ namespace RiotSharp.GameEndpoint.Enums.Converters
                     break;
 				case GameSubType.SR_6x6:
 					result = "SR_6x6";
+					break;
+				case GameSubType.RankedFlexSR:
+					result = "RANKED_FLEX_SR";
+					break;
+				case GameSubType.RankedFlexTT:
+					result = "RANKED_FLEX_TT";
 					break;
                 default:
                     result = "";

@@ -77,8 +77,6 @@ namespace LeagueApplication1
 			picker = new Picker();
 			picker.Title = "Region";
 
-			BackgroundColor = Color.FromRgb(36, 36, 36);
-
 			picker.Items.Add(Region.euw.ToString().ToUpper());
 			picker.Items.Add(Region.eune.ToString().ToUpper());
 			picker.Items.Add(Region.na.ToString().ToUpper());
@@ -134,8 +132,7 @@ namespace LeagueApplication1
 				ItemTemplate = recentTemplate,
 				SeparatorVisibility = SeparatorVisibility.None,
 				HasUnevenRows = true,
-				GroupHeaderTemplate = new DataTemplate(typeof(GroupHeader)),
-				BackgroundColor = Color.FromRgb(36, 36, 36)
+				GroupHeaderTemplate = new DataTemplate(typeof(GroupHeader))
 			};
 
 			Title = "Test";

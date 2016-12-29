@@ -38,11 +38,9 @@ namespace LeagueApplication1
 		public SearchPage(FavoritesMaster Fm)
 		{
 			fm = Fm;
-			BackgroundColor = Color.FromRgb(36, 36, 36);
 			StreamList.ItemTemplate = new DataTemplate(typeof(TwitchStreamCell));
 			StreamList.SeparatorVisibility = SeparatorVisibility.None;
 			StreamList.HasUnevenRows = true;
-			StreamList.BackgroundColor = Color.FromRgb(36, 36, 36);
 
 			StreamList.ItemSelected += async (sender, e) =>
 			{

@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using System.Collections.Generic;
+using RiotSharp.SummonerEndpoint;
 using RiotSharp;
 using System.Linq;
 
@@ -8,11 +9,11 @@ namespace LeagueApplication1
 {
 	public class TabbedPages : TabbedPage
 	{
-		public TabbedPages()
+		public TabbedPages(Summoner summoner, Region region)
 		{
-			BackgroundColor = Color.Gray;
-			Children.Add(new MasterPage() { Title = "Search", Icon = "Search.png" });
+			Children.Add(new MasterPage() { Title = "Streams", Icon = "Streams.png" });
 			Children.Add(new ChampsPage() { Title = "Champions", Icon = "Human.png" });
+			Children.Add(new ProfPage(summoner, region) { Title = "Profile", Icon = "Profile.png" });
 		}
 	}
 
@@ -20,8 +21,13 @@ namespace LeagueApplication1
 	{
 		public ChampsPage() : base(new ChampListPage())
 		{
-			BarBackgroundColor = Color.FromRgb(36, 36, 36);
-			BarTextColor = Color.Green;
+		}
+	}
+
+	public class ProfPage : NavigationPage
+	{
+		public ProfPage(Summoner summoner, Region region) : base(new ProfilePage(summoner, region))
+		{
 		}
 	}
 }

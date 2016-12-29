@@ -11,11 +11,9 @@ namespace LeagueApplication1
 		{
 			Title = "Champions";
 			var staticApi = App.staticApi;
-			BackgroundColor = Color.FromRgb(36, 36, 36);
 
 			NavigationPage.SetHasNavigationBar(this, true);
 			listView = new ChampionListView();
-			listView.BackgroundColor = Color.FromRgb(36, 36, 36);
 			//listView.SeparatorVisibility = SeparatorVisibility.None;
 
 			var adView = new AdMobView { WidthRequest = 320, HeightRequest = 50 };

@@ -23,8 +23,7 @@ namespace LeagueApplication1
 				HeightRequest = 25,
 				Padding = 5,
 				Orientation = StackOrientation.Horizontal,
-				Children = { title },
-				BackgroundColor = Color.FromRgb(36, 36, 36)
+				Children = { title }
 			};
 		}
 	}

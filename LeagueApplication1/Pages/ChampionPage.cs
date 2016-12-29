@@ -16,7 +16,6 @@ namespace LeagueApplication1
 		public ChampionPage(ChampionStatic champion)
 		{
 			NavigationPage.SetHasNavigationBar(this, true);
-			BackgroundColor = Color.FromRgb(36, 36, 36);
 
 			memeTest = new FilterControl { Items = new List<string> { "Lore", "Tips", "Abilities" } };
 			memeTest.SelectedIndex = 0;
@@ -79,8 +78,7 @@ namespace LeagueApplication1
 
 			var abilityListView = new ListView
 			{
-				HasUnevenRows = true,
-				BackgroundColor = Color.FromRgb(36, 36, 36)
+				HasUnevenRows = true
 			};
 
 			var abilityTemplate = new DataTemplate(typeof(AbilityCell));
@@ -208,8 +206,7 @@ namespace LeagueApplication1
 				var contentPage = new ContentPage
 				{
 					Content = webview,
-					Title = myItem.Name,
-					BackgroundColor = Color.FromRgb(36, 36, 36)
+					Title = myItem.Name
 				};
 				abilityListView.IsEnabled = true;
 				Navigation.PushAsync(contentPage);
