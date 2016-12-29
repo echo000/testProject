@@ -84,7 +84,7 @@ namespace LeagueApplication1
 						for (int k = 0; k < itemList.Count; k++)
 						{
 							if (itemList[k] != null)
-								itemNameList.Add(itemList[k].Image.Full);
+								itemNameList.Add(string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/item/{1}", App.appVersion,itemList[k].Image.Full));
 							else
 								itemNameList.Add("Empty.png");
 						}

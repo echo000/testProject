@@ -36,7 +36,7 @@ namespace LeagueApplication1
 		{
 			InitializeComponent();
 			nameText.BackgroundColor = Color.FromRgba(0, 0, 0, 0.6);
-			this.Title = summoner.Name;
+			this.Title = "Profile";
 			Region = region;
 			Summoner = summoner;
 			filterControl = new FilterControl { Items = new List<string> { "Match History", "Current Game", "Statistics" } };
@@ -123,7 +123,7 @@ namespace LeagueApplication1
 				for (int j = 0; j < itemList.Count; j++)
 				{
 					if (itemList[j] != null)
-						itemNameList.Add(itemList[j].Image.Full);
+						itemNameList.Add(string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/item/{1}", App.appVersion,itemList[j].Image.Full));
 					else
 						itemNameList.Add("Empty.png");
 				}

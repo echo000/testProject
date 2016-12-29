@@ -140,7 +140,7 @@ namespace LeagueApplication1
 				for (int j = 0; j < itemList.Count; j++)
 				{
 					if (itemList[j] != null)
-						itemNameList.Add(itemList[j].Image.Full);
+						itemNameList.Add(string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/item/{1}", App.appVersion,itemList[j].Image.Full));
 					else
 						itemNameList.Add("Empty.png");
 				}
@@ -321,5 +321,10 @@ namespace LeagueApplication1
 			gameView.HeightRequest = 425;
 			return gameView;
 		}
+	}
+	public class GroupedSummoners : ObservableCollection<CurrentGamePlayers>
+	{
+		public string LongName { get; set; }
+		public string ShortName { get; set; }
 	}
 }

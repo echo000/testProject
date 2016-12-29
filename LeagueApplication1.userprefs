@@ -1,21 +1,21 @@
 ﻿<Properties StartupConfiguration="{F70D7C1A-1043-4D18-9C69-D0E4FB3B23FD}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
   <MonoDevelop.Ide.Workbench ActiveDocument="testProject Status">
     <Files>
-      <File FileName="LeagueApplication1/Pages/LoginPage.cs" Line="94" Column="11" />
-      <File FileName="LeagueApplication1/RiotSharp/GameEndpoint/Enums/GameSubType.cs" Line="142" Column="15" />
-      <File FileName="LeagueApplication1/RiotSharp/GameEndpoint/Enums/Converters/GameSubTypeConverter.cs" Line="166" Column="5" />
-      <File FileName="LeagueApplication1/RiotSharp/StatsEndpoint/Enums/PlayerStatsSummaryType.cs" Line="139" Column="15" />
-      <File FileName="LeagueApplication1/App.cs" Line="38" Column="5" />
-      <File FileName="LeagueApplication1/Pages/ProfilePage.xaml.cs" Line="49" Column="4" />
-      <File FileName="LeagueApplication1/Pages/MyPage.xaml.cs" Line="229" Column="64" />
-      <File FileName="LeagueApplication1/Utils/ICredentialsService.cs" Line="11" Column="65" />
-      <File FileName="iOS/CredentialsService.cs" Line="47" Column="38" />
+      <File FileName="LeagueApplication1/App.cs" Line="36" Column="34" />
+      <File FileName="LeagueApplication1/Pages/ProfilePage.xaml.cs" Line="39" Column="25" />
+      <File FileName="LeagueApplication1/Pages/MyPage.xaml.cs" Line="156" Column="28" />
+      <File FileName="LeagueApplication1/Pages/ChampListPage.cs" Line="40" Column="1" />
+      <File FileName="LeagueApplication1/Pages/ChampionPage.cs" Line="43" Column="57" />
+      <File FileName="LeagueApplication1/Pages/PreviousGamePage.cs" Line="87" Column="137" />
       <File FileName="testProject Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/cameron/Projects/testProject/LeagueApplication1/Pages/ChampListPage.cs" line="13" column="1" />
+      <Breakpoint file="/Users/cameron/Projects/testProject/LeagueApplication1/Utils/ChampionListView.cs" line="22" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.LeagueApplication1.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.43cbfa888780c8b3b35a43350614ee58caca9003" />

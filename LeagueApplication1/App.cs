@@ -21,6 +21,8 @@ namespace LeagueApplication1
 		static Application app;
 		public const string AppName = "SummonersLol";
 
+		public static string appVersion;
+
 		public static Application CurrentApp
 		{
 			get { return app; }
@@ -30,6 +32,11 @@ namespace LeagueApplication1
 		{
 			api = RiotApi.GetInstance("RGAPI-16b454d1-ed2a-4661-966f-788fa899e702", 500, 30000);
 			staticApi = StaticRiotApi.GetInstance("RGAPI-16b454d1-ed2a-4661-966f-788fa899e702");
+
+			var verstions = staticApi.GetVersions(Region.euw);
+
+			appVersion = verstions[0];
+
 			twitchApi = TwitchApi.GetInstance("4d0rotb2vg2vsmk57k7hz2kghy071go");
 			Current.Resources = new ResourceDictionary();
 

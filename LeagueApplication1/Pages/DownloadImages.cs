@@ -590,9 +590,4 @@ namespace LeagueApplication1
 		}
 	}
 
-	public class GroupedSummoners : ObservableCollection<CurrentGamePlayers>
-	{
-		public string LongName { get; set; }
-		public string ShortName { get; set; }
-	}
 }

@@ -40,7 +40,7 @@ namespace LeagueApplication1
 				images.Add(new Image { Source = skins[i].ImageUrl });
 			}
 
-			SliderView slider = new SliderView(images[0],200, App.display.Width)
+			SliderView slider = new SliderView(images[0], 200, 400)
 			{
 				BackgroundColor = Color.Gray,
 				TransitionLength = 200,
@@ -90,23 +90,21 @@ namespace LeagueApplication1
 				var stringId = champion.Id.ToString();
 				if (champion.Id == 2 || champion.Id == 3 || champion.Id == 4 || champion.Id == 8)
 				{
-					abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = champion.Passive.Image.Full, Video = string.Format("https://lolstatic-a.akamaihd.net/champion-abilities/videos/mp4/000{0}_01.mp4", champion.Id) });
-
-					for (int i = 0; i < champion.Spells.Count; i++)
-					{
-						abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = champion.Spells[i].Image.Full, Video = string.Format("https://lolstatic-a.akamaihd.net/champion-abilities/videos/mp4/000{0}_0{1}.mp4", champion.Id, i + 2) });
-					}
+					abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/passive/{1}",App.appVersion, champion.Passive.Image.Full), Video = string.Format("https://lolstatic-a.akamaihd.net/champion-abilities/videos/mp4/000{0}_01.mp4", champion.Id) });
+					abilityList.Add(new abilityView { Name = champion.Spells[0].Name, Description = champion.Spells[0].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[0].Image.Full), Video = string.Format("https://lolstatic-a.akamaihd.net/champion-abilities/videos/mp4/000{0}_0{1}.mp4", champion.Id, 1) });
+					abilityList.Add(new abilityView { Name = champion.Spells[1].Name, Description = champion.Spells[1].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[1].Image.Full), Video = string.Format("https://lolstatic-a.akamaihd.net/champion-abilities/videos/mp4/000{0}_0{1}.mp4", champion.Id, 2) });
+					abilityList.Add(new abilityView { Name = champion.Spells[2].Name, Description = champion.Spells[2].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[2].Image.Full), Video = string.Format("https://lolstatic-a.akamaihd.net/champion-abilities/videos/mp4/000{0}_0{1}.mp4", champion.Id, 3) });
+					abilityList.Add(new abilityView { Name = champion.Spells[3].Name, Description = champion.Spells[3].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[3].Image.Full), Video = string.Format("https://lolstatic-a.akamaihd.net/champion-abilities/videos/mp4/000{0}_0{1}.mp4", champion.Id, 4) });
 				}
-				if (champion.Id == 240)
+				else if (champion.Id == 240)
 				{
-					abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = champion.Passive.Image.Full, Video = "No Video" });
-
-					for (int i = 0; i < champion.Spells.Count; i++)
-					{
-						abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = champion.Spells[i].Image.Full, Video = "No Video" });
-					}
+					abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/passive/{1}", App.appVersion, champion.Passive.Image.Full), Video = "No Video" });
+					abilityList.Add(new abilityView { Name = champion.Spells[0].Name, Description = champion.Spells[0].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[0].Image.Full), Video = "No Video" });
+					abilityList.Add(new abilityView { Name = champion.Spells[1].Name, Description = champion.Spells[1].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[1].Image.Full), Video = "No Video" });
+					abilityList.Add(new abilityView { Name = champion.Spells[2].Name, Description = champion.Spells[2].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[2].Image.Full), Video = "No Video" });
+					abilityList.Add(new abilityView { Name = champion.Spells[3].Name, Description = champion.Spells[3].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[3].Image.Full), Video = "No Video" });
 				}
-				if (champion.Id == 12 || champion.Id == 36 || champion.Id == 9 || champion.Id == 120 || champion.Id == 126 ||
+				else if (champion.Id == 12 || champion.Id == 36 || champion.Id == 9 || champion.Id == 120 || champion.Id == 126 ||
 						 champion.Id == 85 || champion.Id == 82 || champion.Id == 25 || champion.Id == 78 || champion.Id == 33 || 
 				         champion.Id == 102 || champion.Id == 27 || champion.Id == 134 || champion.Id == 91 || champion.Id == 77 || 
 				         champion.Id == 45 || champion.Id == 106 || champion.Id == 62)
@@ -118,16 +116,16 @@ namespace LeagueApplication1
 						switch (stringId.Length)
 						{
 							case 1:
-								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = champion.Spells[i].Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/000{0}_0{1}.mp4", champion.Id, i + 2) });
+								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[i].Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/000{0}_0{1}.mp4", champion.Id, i + 2) });
 								break;
 							case 2:
-								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = champion.Spells[i].Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/00{0}_0{1}.mp4", champion.Id, i + 2) });
+								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[i].Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/00{0}_0{1}.mp4", champion.Id, i + 2) });
 								break;
 							case 3:
-								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = champion.Spells[i].Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/0{0}_0{1}.mp4", champion.Id, i + 2) });
+								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[i].Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/0{0}_0{1}.mp4", champion.Id, i + 2) });
 								break;
 							case 4:
-								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = champion.Spells[i].Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/{0}_0{1}.mp4", champion.Id, i + 2) });
+								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[i].Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/{0}_0{1}.mp4", champion.Id, i + 2) });
 								break;
 						}
 					}
@@ -137,16 +135,16 @@ namespace LeagueApplication1
 					switch (stringId.Length)
 					{
 						case 1:
-							abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = champion.Passive.Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/000{0}_01.mp4", champion.Id) });
+							abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/passive/{1}", App.appVersion, champion.Passive.Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/000{0}_01.mp4", champion.Id) });
 							break;
 						case 2:
-							abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = champion.Passive.Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/00{0}_01.mp4", champion.Id) });
+							abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/passive/{1}", App.appVersion, champion.Passive.Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/00{0}_01.mp4", champion.Id) });
 							break;
 						case 3:
-							abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = champion.Passive.Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/0{0}_01.mp4", champion.Id) });
+							abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/passive/{1}", App.appVersion, champion.Passive.Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/0{0}_01.mp4", champion.Id) });
 							break;
 						case 4:
-							abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = champion.Passive.Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/{0}_01.mp4", champion.Id) });
+							abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/passive/{1}", App.appVersion, champion.Passive.Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/{0}_01.mp4", champion.Id) });
 							break;
 					}
 
@@ -155,16 +153,16 @@ namespace LeagueApplication1
 						switch (stringId.Length)
 						{
 							case 1:
-								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = champion.Spells[i].Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/000{0}_0{1}.mp4", champion.Id, i + 2) });
+								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[i].Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/000{0}_0{1}.mp4", champion.Id, i + 2) });
 								break;
 							case 2:
-								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = champion.Spells[i].Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/00{0}_0{1}.mp4", champion.Id, i + 2) });
+								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[i].Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/00{0}_0{1}.mp4", champion.Id, i + 2) });
 								break;
 							case 3:
-								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = champion.Spells[i].Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/0{0}_0{1}.mp4", champion.Id, i + 2) });
+								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[i].Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/0{0}_0{1}.mp4", champion.Id, i + 2) });
 								break;
 							case 4:
-								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = champion.Spells[i].Image.Full, Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/{0}_0{1}.mp4", champion.Id, i + 2) });
+								abilityList.Add(new abilityView { Name = champion.Spells[i].Name, Description = champion.Spells[i].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[i].Image.Full), Video = string.Format("http://cdn.leagueoflegends.com/champion-abilities/videos/mp4/{0}_0{1}.mp4", champion.Id, i + 2) });
 								break;
 						}
 					}
@@ -173,10 +171,10 @@ namespace LeagueApplication1
 			else
 			{
 				abilityList.Add(new abilityView { Name = champion.Passive.Name, Description = champion.Passive.Description, Image = champion.Passive.Image.Full, Video = "http://news.cdn.leagueoflegends.com/public/images/pages/illaoi-reveal/videos/Illaoi_P.mp4" });
-				abilityList.Add(new abilityView { Name = champion.Spells[0].Name, Description = champion.Spells[0].Description, Image = champion.Spells[0].Image.Full, Video = "http://news.cdn.leagueoflegends.com/public/images/pages/illaoi-reveal/videos/Illaoi_Q.mp4" });
-				abilityList.Add(new abilityView { Name = champion.Spells[1].Name, Description = champion.Spells[1].Description, Image = champion.Spells[1].Image.Full, Video = "http://news.cdn.leagueoflegends.com/public/images/pages/illaoi-reveal/videos/Illaoi_W.mp4" });
-				abilityList.Add(new abilityView { Name = champion.Spells[2].Name, Description = champion.Spells[2].Description, Image = champion.Spells[2].Image.Full, Video = "http://news.cdn.leagueoflegends.com/public/images/pages/illaoi-reveal/videos/Illaoi_E.mp4" });
-				abilityList.Add(new abilityView { Name = champion.Spells[3].Name, Description = champion.Spells[3].Description, Image = champion.Spells[3].Image.Full, Video = "http://news.cdn.leagueoflegends.com/public/images/pages/illaoi-reveal/videos/Illaoi_R.mp4" });
+				abilityList.Add(new abilityView { Name = champion.Spells[0].Name, Description = champion.Spells[0].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}",App.appVersion, champion.Spells[0].Image.Full), Video = "http://news.cdn.leagueoflegends.com/public/images/pages/illaoi-reveal/videos/Illaoi_Q.mp4" });
+				abilityList.Add(new abilityView { Name = champion.Spells[1].Name, Description = champion.Spells[1].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[1].Image.Full), Video = "http://news.cdn.leagueoflegends.com/public/images/pages/illaoi-reveal/videos/Illaoi_W.mp4" });
+				abilityList.Add(new abilityView { Name = champion.Spells[2].Name, Description = champion.Spells[2].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[2].Image.Full), Video = "http://news.cdn.leagueoflegends.com/public/images/pages/illaoi-reveal/videos/Illaoi_E.mp4" });
+				abilityList.Add(new abilityView { Name = champion.Spells[3].Name, Description = champion.Spells[3].Description, Image = string.Format("http://ddragon.leagueoflegends.com/cdn/{0}/img/spell/{1}", App.appVersion, champion.Spells[3].Image.Full), Video = "http://news.cdn.leagueoflegends.com/public/images/pages/illaoi-reveal/videos/Illaoi_R.mp4" });
 			}
 			abilityListView.ItemTemplate = abilityTemplate;
 			abilityListView.ItemsSource = abilityList;

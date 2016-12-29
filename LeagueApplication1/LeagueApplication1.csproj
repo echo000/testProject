@@ -229,7 +229,6 @@
     <Compile Include="RiotSharp\TournamentEndpoint\Enums\Converters\TournamentSpectatorTypeConverter.cs" />
     <Compile Include="Pages\ChampionPage.cs" />
     <Compile Include="Pages\ChampListPage.cs" />
-    <Compile Include="Pages\DownloadImages.cs" />
     <Compile Include="Pages\PreviousGamePage.cs" />
     <Compile Include="Pages\SearchPage.cs" />
     <Compile Include="Pages\TabbedPages.cs" />
