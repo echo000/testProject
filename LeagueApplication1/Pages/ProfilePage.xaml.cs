@@ -36,7 +36,7 @@ namespace LeagueApplication1
 		{
 			InitializeComponent();
 			nameText.BackgroundColor = Color.FromRgba(0, 0, 0, 0.6);
-			this.Title = "Profile";
+			Title = "Profile";
 			Region = region;
 			Summoner = summoner;
 			filterControl = new FilterControl { Items = new List<string> { "Match History", "Current Game", "Statistics" } };
