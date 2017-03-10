@@ -30,8 +30,8 @@ namespace LeagueApplication1
 
 		public App()
 		{
-			api = RiotApi.GetInstance("RGAPI-16b454d1-ed2a-4661-966f-788fa899e702", 500, 30000);
-			staticApi = StaticRiotApi.GetInstance("RGAPI-16b454d1-ed2a-4661-966f-788fa899e702");
+			api = RiotApi.GetInstance("", 500, 30000);
+			staticApi = StaticRiotApi.GetInstance("");
 
 			var verstions = staticApi.GetVersions(Region.euw);
 
